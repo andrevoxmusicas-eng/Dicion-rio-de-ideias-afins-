@@ -14,6 +14,8 @@
   --chip-related-text: #065f46;
   --chip-suggestion-bg: #fff7ed;
   --chip-suggestion-text: #9a3412;
+  --chip-expressao-bg: #eef4ff;
+  --chip-expressao-text: #1e40af;
   --shadow: 0 10px 30px rgba(76, 29, 149, 0.12);
 }
 
@@ -34,6 +36,8 @@
     --chip-related-text: #86efac;
     --chip-suggestion-bg: #33220f;
     --chip-suggestion-text: #fdba74;
+    --chip-expressao-bg: #1a2a4a;
+    --chip-expressao-text: #93c5fd;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   }
 }
@@ -226,6 +230,11 @@ body {
   color: var(--chip-suggestion-text);
 }
 
+.chip--expressao {
+  background: var(--chip-expressao-bg);
+  color: var(--chip-expressao-text);
+}
+
 .phrase-list {
   margin: 0;
   padding-left: 20px;
@@ -235,6 +244,15 @@ body {
 
 .phrase-list li {
   margin-bottom: 4px;
+}
+
+.phrase-list--ditados li {
+  font-style: italic;
+}
+
+.phrase-list--ditados li::marker {
+  content: "“ ";
+  color: var(--accent);
 }
 
 .no-match {

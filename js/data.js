@@ -1,11 +1,20 @@
 // Base de dados do Dicionário de Ideias Afins
 // Cada entrada representa um "conceito": um conjunto de termos (sinônimos/variações),
-// frases que expressam a ideia, e ids de conceitos relacionados (ideias afins).
+// frases que expressam a ideia, ditados populares e expressões idiomáticas relacionadas,
+// e ids de conceitos relacionados (ideias afins).
 const CONCEPTS = [
   {
-    id: "felicidade",
-    termos: ["felicidade", "feliz", "alegria", "contentamento", "júbilo", "satisfação", "leveza"],
-    frases: [
+    "id": "felicidade",
+    "termos": [
+      "felicidade",
+      "feliz",
+      "alegria",
+      "contentamento",
+      "júbilo",
+      "satisfação",
+      "leveza"
+    ],
+    "frases": [
       "sentir-se bem com a vida",
       "estar em paz consigo mesmo",
       "viver um momento de plenitude",
@@ -13,12 +22,31 @@ const CONCEPTS = [
       "sentir o coração leve",
       "estar tudo em harmonia por dentro"
     ],
-    relacionados: ["euforia", "gratidao", "esperanca", "amor", "calma", "alivio"]
+    "expressoes": [
+      "estar nas nuvens",
+      "estar no sétimo céu"
+    ],
+    "relacionados": [
+      "euforia",
+      "gratidao",
+      "esperanca",
+      "amor",
+      "calma",
+      "alivio"
+    ]
   },
   {
-    id: "tristeza",
-    termos: ["tristeza", "triste", "melancolia", "abatimento", "desânimo", "pesar", "aflição"],
-    frases: [
+    "id": "tristeza",
+    "termos": [
+      "tristeza",
+      "triste",
+      "melancolia",
+      "abatimento",
+      "desânimo",
+      "pesar",
+      "aflição"
+    ],
+    "frases": [
       "sentir um peso no peito",
       "chorar sem saber bem o motivo",
       "estar com os ânimos em baixa",
@@ -26,12 +54,31 @@ const CONCEPTS = [
       "sentir um nó na garganta",
       "não ter vontade de fazer nada"
     ],
-    relacionados: ["saudade", "solidao", "desespero", "tedio", "vergonha", "frustracao"]
+    "expressoes": [
+      "estar na fossa",
+      "estar por baixo"
+    ],
+    "relacionados": [
+      "saudade",
+      "solidao",
+      "desespero",
+      "tedio",
+      "vergonha",
+      "frustracao"
+    ]
   },
   {
-    id: "medo",
-    termos: ["medo", "temor", "pavor", "receio", "susto", "apreensão", "insegurança"],
-    frases: [
+    "id": "medo",
+    "termos": [
+      "medo",
+      "temor",
+      "pavor",
+      "receio",
+      "susto",
+      "apreensão",
+      "insegurança"
+    ],
+    "frases": [
       "sentir um frio na barriga",
       "ter as pernas bambas",
       "não conseguir dar o primeiro passo",
@@ -39,12 +86,31 @@ const CONCEPTS = [
       "sentir os pelos arrepiarem",
       "travar na hora de agir"
     ],
-    relacionados: ["ansiedade", "coragem", "surpresa", "desespero", "ignorancia", "duvida"]
+    "ditados": [
+      "Gato escaldado tem medo de água fria.",
+      "Cão que ladra não morde."
+    ],
+    "relacionados": [
+      "ansiedade",
+      "coragem",
+      "surpresa",
+      "desespero",
+      "ignorancia",
+      "duvida"
+    ]
   },
   {
-    id: "raiva",
-    termos: ["raiva", "ira", "fúria", "irritação", "indignação", "revolta", "aborrecimento"],
-    frases: [
+    "id": "raiva",
+    "termos": [
+      "raiva",
+      "ira",
+      "fúria",
+      "irritação",
+      "indignação",
+      "revolta",
+      "aborrecimento"
+    ],
+    "frases": [
       "ver tudo vermelho",
       "perder a paciência",
       "sentir o sangue ferver",
@@ -52,12 +118,25 @@ const CONCEPTS = [
       "não engolir aquilo",
       "sair fumaça pelas orelhas"
     ],
-    relacionados: ["odio", "ciume", "justica", "paciencia", "orgulho", "frustracao"]
+    "relacionados": [
+      "odio",
+      "ciume",
+      "justica",
+      "paciencia",
+      "orgulho",
+      "frustracao"
+    ]
   },
   {
-    id: "surpresa",
-    termos: ["surpresa", "espanto", "assombro", "perplexidade", "estranhamento"],
-    frases: [
+    "id": "surpresa",
+    "termos": [
+      "surpresa",
+      "espanto",
+      "assombro",
+      "perplexidade",
+      "estranhamento"
+    ],
+    "frases": [
       "ficar de queixo caído",
       "não acreditar no que os olhos veem",
       "levar um susto bom",
@@ -65,12 +144,29 @@ const CONCEPTS = [
       "ficar sem reação",
       "tomar um choque"
     ],
-    relacionados: ["medo", "felicidade", "destino", "sorte", "mudanca", "curiosidade"]
+    "expressoes": [
+      "dar zebra",
+      "cair a ficha"
+    ],
+    "relacionados": [
+      "medo",
+      "felicidade",
+      "destino",
+      "sorte",
+      "mudanca",
+      "curiosidade"
+    ]
   },
   {
-    id: "nojo",
-    termos: ["nojo", "repugnância", "aversão", "repulsa", "enjoo"],
-    frases: [
+    "id": "nojo",
+    "termos": [
+      "nojo",
+      "repugnância",
+      "aversão",
+      "repulsa",
+      "enjoo"
+    ],
+    "frases": [
       "torcer o nariz",
       "sentir o estômago embrulhar",
       "não suportar nem olhar",
@@ -78,12 +174,26 @@ const CONCEPTS = [
       "dar vontade de vomitar",
       "ficar de cabelo em pé de nojo"
     ],
-    relacionados: ["odio", "vergonha", "raiva", "ignorancia", "rejeicao"]
+    "relacionados": [
+      "odio",
+      "vergonha",
+      "raiva",
+      "ignorancia",
+      "rejeicao"
+    ]
   },
   {
-    id: "amor",
-    termos: ["amor", "carinho", "afeto", "paixão", "amar", "ternura", "amor-próprio"],
-    frases: [
+    "id": "amor",
+    "termos": [
+      "amor",
+      "carinho",
+      "afeto",
+      "paixão",
+      "amar",
+      "ternura",
+      "amor-próprio"
+    ],
+    "frases": [
       "gostar de alguém de coração",
       "sentir borboletas no estômago",
       "querer bem sem esperar nada em troca",
@@ -91,12 +201,25 @@ const CONCEPTS = [
       "não conseguir tirar do pensamento",
       "sentir o peito quentinho perto da pessoa"
     ],
-    relacionados: ["amizade", "familia", "gratidao", "felicidade", "confianca", "reconciliacao"]
+    "relacionados": [
+      "amizade",
+      "familia",
+      "gratidao",
+      "felicidade",
+      "confianca",
+      "reconciliacao"
+    ]
   },
   {
-    id: "odio",
-    termos: ["ódio", "aversão profunda", "rancor", "detestar", "repúdio"],
-    frases: [
+    "id": "odio",
+    "termos": [
+      "ódio",
+      "aversão profunda",
+      "rancor",
+      "detestar",
+      "repúdio"
+    ],
+    "frases": [
       "guardar mágoa por anos",
       "não conseguir perdoar",
       "desejar mal ao outro",
@@ -104,12 +227,26 @@ const CONCEPTS = [
       "não suportar nem ouvir o nome da pessoa",
       "guardar isso como uma pedra no sapato"
     ],
-    relacionados: ["raiva", "ciume", "traicao", "nojo", "vergonha", "rejeicao"]
+    "relacionados": [
+      "raiva",
+      "ciume",
+      "traicao",
+      "nojo",
+      "vergonha",
+      "rejeicao"
+    ]
   },
   {
-    id: "ansiedade",
-    termos: ["ansiedade", "aflição", "apreensão", "nervosismo", "angústia", "inquietação"],
-    frases: [
+    "id": "ansiedade",
+    "termos": [
+      "ansiedade",
+      "aflição",
+      "apreensão",
+      "nervosismo",
+      "angústia",
+      "inquietação"
+    ],
+    "frases": [
       "roer as unhas de nervoso",
       "sentir o coração acelerado",
       "antecipar o pior antes de acontecer",
@@ -117,12 +254,29 @@ const CONCEPTS = [
       "a mente correr mais rápido que o corpo",
       "sentir um aperto no peito antes de algo importante"
     ],
-    relacionados: ["medo", "calma", "desespero", "tristeza", "paciencia", "estresse"]
+    "expressoes": [
+      "fazer tempestade em copo d'água"
+    ],
+    "relacionados": [
+      "medo",
+      "calma",
+      "desespero",
+      "tristeza",
+      "paciencia",
+      "estresse"
+    ]
   },
   {
-    id: "calma",
-    termos: ["calma", "tranquilidade", "serenidade", "paz", "sossego", "quietude"],
-    frases: [
+    "id": "calma",
+    "termos": [
+      "calma",
+      "tranquilidade",
+      "serenidade",
+      "paz",
+      "sossego",
+      "quietude"
+    ],
+    "frases": [
       "respirar fundo e deixar passar",
       "manter a cabeça no lugar",
       "encontrar um porto seguro",
@@ -130,12 +284,25 @@ const CONCEPTS = [
       "deixar a água baixar antes de agir",
       "sentir tudo mais leve por dentro"
     ],
-    relacionados: ["paciencia", "felicidade", "sabedoria", "confianca", "natureza", "alivio"]
+    "relacionados": [
+      "paciencia",
+      "felicidade",
+      "sabedoria",
+      "confianca",
+      "natureza",
+      "alivio"
+    ]
   },
   {
-    id: "esperanca",
-    termos: ["esperança", "otimismo", "fé", "expectativa positiva", "confiança no futuro"],
-    frases: [
+    "id": "esperanca",
+    "termos": [
+      "esperança",
+      "otimismo",
+      "fé",
+      "expectativa positiva",
+      "confiança no futuro"
+    ],
+    "frases": [
       "acreditar em dias melhores",
       "não perder a fé mesmo no escuro",
       "enxergar luz no fim do túnel",
@@ -143,12 +310,29 @@ const CONCEPTS = [
       "acordar acreditando que vai dar certo",
       "plantar hoje o que quer colher amanhã"
     ],
-    relacionados: ["felicidade", "coragem", "sonho", "perseveranca", "destino", "fe"]
+    "ditados": [
+      "Deus escreve certo por linhas tortas.",
+      "Depois da tempestade vem a bonança."
+    ],
+    "relacionados": [
+      "felicidade",
+      "coragem",
+      "sonho",
+      "perseveranca",
+      "destino",
+      "fe"
+    ]
   },
   {
-    id: "desespero",
-    termos: ["desespero", "desesperança", "aflição extrema", "angústia profunda", "pânico"],
-    frases: [
+    "id": "desespero",
+    "termos": [
+      "desespero",
+      "desesperança",
+      "aflição extrema",
+      "angústia profunda",
+      "pânico"
+    ],
+    "frases": [
       "não ver saída para o problema",
       "sentir o chão desabar",
       "estar à beira do abismo",
@@ -156,12 +340,24 @@ const CONCEPTS = [
       "não saber mais para onde correr",
       "sentir que tudo desmorona ao mesmo tempo"
     ],
-    relacionados: ["tristeza", "medo", "ansiedade", "fracasso", "solidao", "urgencia"]
+    "relacionados": [
+      "tristeza",
+      "medo",
+      "ansiedade",
+      "fracasso",
+      "solidao",
+      "urgencia"
+    ]
   },
   {
-    id: "ciume",
-    termos: ["ciúme", "possessividade", "insegurança afetiva", "desconfiança"],
-    frases: [
+    "id": "ciume",
+    "termos": [
+      "ciúme",
+      "possessividade",
+      "insegurança afetiva",
+      "desconfiança"
+    ],
+    "frases": [
       "não suportar ver o outro com o que é seu",
       "sentir o peito apertar de ciúme",
       "comparar-se o tempo todo com o outro",
@@ -169,12 +365,23 @@ const CONCEPTS = [
       "sentir medo de perder o que é seu",
       "vigiar cada passo do outro"
     ],
-    relacionados: ["raiva", "amor", "traicao", "confianca", "odio", "inveja"]
+    "relacionados": [
+      "raiva",
+      "amor",
+      "traicao",
+      "confianca",
+      "odio",
+      "inveja"
+    ]
   },
   {
-    id: "inveja",
-    termos: ["inveja", "cobiça", "despeito"],
-    frases: [
+    "id": "inveja",
+    "termos": [
+      "inveja",
+      "cobiça",
+      "despeito"
+    ],
+    "frases": [
       "querer o que o outro tem",
       "não suportar ver o sucesso alheio",
       "torcer o nariz para a felicidade do outro",
@@ -182,12 +389,24 @@ const CONCEPTS = [
       "comparar a própria vida com a dos outros",
       "desejar em silêncio o que não é seu"
     ],
-    relacionados: ["ciume", "ganancia", "admiracao", "competicao", "gratidao"]
+    "relacionados": [
+      "ciume",
+      "ganancia",
+      "admiracao",
+      "competicao",
+      "gratidao"
+    ]
   },
   {
-    id: "vergonha",
-    termos: ["vergonha", "constrangimento", "acanhamento", "timidez", "embaraço"],
-    frases: [
+    "id": "vergonha",
+    "termos": [
+      "vergonha",
+      "constrangimento",
+      "acanhamento",
+      "timidez",
+      "embaraço"
+    ],
+    "frases": [
       "ficar vermelho na hora",
       "querer que o chão se abra",
       "evitar o olhar dos outros",
@@ -195,12 +414,28 @@ const CONCEPTS = [
       "não saber onde enfiar a cara",
       "gaguejar de tão sem graça"
     ],
-    relacionados: ["orgulho", "medo", "humildade", "tristeza", "culpa"]
+    "expressoes": [
+      "morrer de vergonha",
+      "querer que a terra o engula"
+    ],
+    "relacionados": [
+      "orgulho",
+      "medo",
+      "humildade",
+      "tristeza",
+      "culpa"
+    ]
   },
   {
-    id: "orgulho",
-    termos: ["orgulho", "brio", "amor-próprio", "vaidade", "altivez"],
-    frases: [
+    "id": "orgulho",
+    "termos": [
+      "orgulho",
+      "brio",
+      "amor-próprio",
+      "vaidade",
+      "altivez"
+    ],
+    "frases": [
       "encher o peito de satisfação",
       "não abaixar a cabeça",
       "sentir-se realizado com a própria conquista",
@@ -208,12 +443,24 @@ const CONCEPTS = [
       "não admitir estar errado",
       "usar aquilo como troféu"
     ],
-    relacionados: ["felicidade", "sucesso", "humildade", "vergonha", "gratidao", "vaidade"]
+    "relacionados": [
+      "felicidade",
+      "sucesso",
+      "humildade",
+      "vergonha",
+      "gratidao",
+      "vaidade"
+    ]
   },
   {
-    id: "vaidade",
-    termos: ["vaidade", "narcisismo", "presunção", "autoestima exagerada"],
-    frases: [
+    "id": "vaidade",
+    "termos": [
+      "vaidade",
+      "narcisismo",
+      "presunção",
+      "autoestima exagerada"
+    ],
+    "frases": [
       "se olhar no espelho várias vezes ao dia",
       "querer ser sempre o centro das atenções",
       "cuidar da aparência acima de tudo",
@@ -221,12 +468,26 @@ const CONCEPTS = [
       "não sair de casa sem se arrumar",
       "achar que é sempre o melhor da sala"
     ],
-    relacionados: ["orgulho", "beleza", "admiracao", "competicao"]
+    "ditados": [
+      "Nem tudo que reluz é ouro.",
+      "As aparências enganam."
+    ],
+    "relacionados": [
+      "orgulho",
+      "beleza",
+      "admiracao",
+      "competicao"
+    ]
   },
   {
-    id: "gratidao",
-    termos: ["gratidão", "reconhecimento", "agradecimento", "apreço"],
-    frases: [
+    "id": "gratidao",
+    "termos": [
+      "gratidão",
+      "reconhecimento",
+      "agradecimento",
+      "apreço"
+    ],
+    "frases": [
       "reconhecer o que a vida deu",
       "agradecer pelas pequenas coisas",
       "valorizar quem esteve ao lado",
@@ -234,12 +495,27 @@ const CONCEPTS = [
       "olhar para trás e agradecer o caminho",
       "dar valor ao que se tem antes de perder"
     ],
-    relacionados: ["felicidade", "amor", "humildade", "esperanca", "abundancia"]
+    "ditados": [
+      "Cavalo dado não se olha os dentes."
+    ],
+    "relacionados": [
+      "felicidade",
+      "amor",
+      "humildade",
+      "esperanca",
+      "abundancia"
+    ]
   },
   {
-    id: "saudade",
-    termos: ["saudade", "nostalgia", "falta", "lembrança querida", "reminiscência"],
-    frases: [
+    "id": "saudade",
+    "termos": [
+      "saudade",
+      "nostalgia",
+      "falta",
+      "lembrança querida",
+      "reminiscência"
+    ],
+    "frases": [
       "sentir falta de um tempo que já passou",
       "lembrar com um aperto no coração",
       "desejar reviver um momento",
@@ -247,12 +523,25 @@ const CONCEPTS = [
       "sentir um vazio de quem não está mais por perto",
       "voltar num pensamento para um lugar que já não existe mais"
     ],
-    relacionados: ["tristeza", "amor", "familia", "amizade", "tempo", "infancia"]
+    "relacionados": [
+      "tristeza",
+      "amor",
+      "familia",
+      "amizade",
+      "tempo",
+      "infancia"
+    ]
   },
   {
-    id: "solidao",
-    termos: ["solidão", "isolamento", "vazio", "desamparo", "solitude"],
-    frases: [
+    "id": "solidao",
+    "termos": [
+      "solidão",
+      "isolamento",
+      "vazio",
+      "desamparo",
+      "solitude"
+    ],
+    "frases": [
       "sentir-se sozinho mesmo cercado de gente",
       "não ter com quem dividir o dia",
       "o silêncio que pesa",
@@ -260,12 +549,27 @@ const CONCEPTS = [
       "comer sozinho olhando para a parede",
       "sentir que ninguém entenderia"
     ],
-    relacionados: ["tristeza", "desespero", "amizade", "tedio", "silencio"]
+    "ditados": [
+      "Mais vale só do que mal acompanhado."
+    ],
+    "relacionados": [
+      "tristeza",
+      "desespero",
+      "amizade",
+      "tedio",
+      "silencio"
+    ]
   },
   {
-    id: "tedio",
-    termos: ["tédio", "monotonia", "enfado", "aborrecimento", "apatia"],
-    frases: [
+    "id": "tedio",
+    "termos": [
+      "tédio",
+      "monotonia",
+      "enfado",
+      "aborrecimento",
+      "apatia"
+    ],
+    "frases": [
       "os dias parecem todos iguais",
       "não ter o que fazer",
       "sentir o tempo andar devagar",
@@ -273,12 +577,24 @@ const CONCEPTS = [
       "rolar a tela sem realmente ver nada",
       "sentir que nada empolga mais"
     ],
-    relacionados: ["solidao", "preguica", "tristeza", "criatividade", "rotina"]
+    "relacionados": [
+      "solidao",
+      "preguica",
+      "tristeza",
+      "criatividade",
+      "rotina"
+    ]
   },
   {
-    id: "euforia",
-    termos: ["euforia", "êxtase", "empolgação", "entusiasmo", "vibração"],
-    frases: [
+    "id": "euforia",
+    "termos": [
+      "euforia",
+      "êxtase",
+      "empolgação",
+      "entusiasmo",
+      "vibração"
+    ],
+    "frases": [
       "sentir uma explosão de alegria",
       "não caber em si de tanta empolgação",
       "vibrar de emoção",
@@ -286,12 +602,29 @@ const CONCEPTS = [
       "pular de alegria sem conseguir se controlar",
       "sentir uma descarga de adrenalina boa"
     ],
-    relacionados: ["felicidade", "sucesso", "amor", "surpresa", "diversao"]
+    "expressoes": [
+      "estar com a corda toda",
+      "estar nas nuvens"
+    ],
+    "relacionados": [
+      "felicidade",
+      "sucesso",
+      "amor",
+      "surpresa",
+      "diversao"
+    ]
   },
   {
-    id: "coragem",
-    termos: ["coragem", "bravura", "valentia", "audácia", "destemor", "ousadia"],
-    frases: [
+    "id": "coragem",
+    "termos": [
+      "coragem",
+      "bravura",
+      "valentia",
+      "audácia",
+      "destemor",
+      "ousadia"
+    ],
+    "frases": [
       "enfrentar o medo de frente",
       "dar o primeiro passo mesmo tremendo",
       "encarar o desafio sem recuar",
@@ -299,12 +632,32 @@ const CONCEPTS = [
       "tomar a decisão difícil mesmo com medo",
       "seguir em frente mesmo sem garantias"
     ],
-    relacionados: ["medo", "perseveranca", "honestidade", "esperanca", "orgulho", "superacao"]
+    "ditados": [
+      "Quem não arrisca, não petisca."
+    ],
+    "expressoes": [
+      "encarar o touro à unha",
+      "meter a cara"
+    ],
+    "relacionados": [
+      "medo",
+      "perseveranca",
+      "honestidade",
+      "esperanca",
+      "orgulho",
+      "superacao"
+    ]
   },
   {
-    id: "honestidade",
-    termos: ["honestidade", "sinceridade", "franqueza", "verdade pessoal", "transparência"],
-    frases: [
+    "id": "honestidade",
+    "termos": [
+      "honestidade",
+      "sinceridade",
+      "franqueza",
+      "verdade pessoal",
+      "transparência"
+    ],
+    "frases": [
       "falar a verdade mesmo quando dói",
       "não esconder nada por trás",
       "ser fiel à própria palavra",
@@ -312,12 +665,31 @@ const CONCEPTS = [
       "dizer as coisas como elas são",
       "não maquiar a real situação"
     ],
-    relacionados: ["verdade", "integridade", "confianca", "coragem", "respeito"]
+    "ditados": [
+      "A mentira tem perna curta.",
+      "Quem não deve, não teme."
+    ],
+    "expressoes": [
+      "não ter papas na língua",
+      "falar sem meias palavras"
+    ],
+    "relacionados": [
+      "verdade",
+      "integridade",
+      "confianca",
+      "coragem",
+      "respeito"
+    ]
   },
   {
-    id: "lealdade",
-    termos: ["lealdade", "fidelidade", "devoção", "companheirismo"],
-    frases: [
+    "id": "lealdade",
+    "termos": [
+      "lealdade",
+      "fidelidade",
+      "devoção",
+      "companheirismo"
+    ],
+    "frases": [
       "estar ao lado nas horas difíceis",
       "não trair a confiança de quem confiou",
       "manter a palavra dada",
@@ -325,12 +697,23 @@ const CONCEPTS = [
       "não virar as costas quando a maré vira",
       "ficar do lado de quem sempre esteve do seu"
     ],
-    relacionados: ["confianca", "amizade", "honestidade", "traicao", "respeito"]
+    "relacionados": [
+      "confianca",
+      "amizade",
+      "honestidade",
+      "traicao",
+      "respeito"
+    ]
   },
   {
-    id: "justica",
-    termos: ["justiça", "equidade", "imparcialidade", "retidão"],
-    frases: [
+    "id": "justica",
+    "termos": [
+      "justiça",
+      "equidade",
+      "imparcialidade",
+      "retidão"
+    ],
+    "frases": [
       "dar a cada um o que é seu",
       "tratar todos com as mesmas regras",
       "corrigir o que estava errado",
@@ -338,12 +721,27 @@ const CONCEPTS = [
       "julgar sem favorecer ninguém",
       "colher o que se plantou, para o bem ou para o mal"
     ],
-    relacionados: ["igualdade", "honestidade", "respeito", "raiva", "responsabilidade"]
+    "ditados": [
+      "Quem com ferro fere, com ferro será ferido.",
+      "Cada macaco no seu galho."
+    ],
+    "relacionados": [
+      "igualdade",
+      "honestidade",
+      "respeito",
+      "raiva",
+      "responsabilidade"
+    ]
   },
   {
-    id: "liberdade",
-    termos: ["liberdade", "autonomia", "independência", "livre-arbítrio"],
-    frases: [
+    "id": "liberdade",
+    "termos": [
+      "liberdade",
+      "autonomia",
+      "independência",
+      "livre-arbítrio"
+    ],
+    "frases": [
       "poder escolher o próprio caminho",
       "não depender de ninguém para viver",
       "voar sem correntes",
@@ -351,12 +749,22 @@ const CONCEPTS = [
       "não precisar pedir permissão para viver a própria vida",
       "sair do lugar quando bem entender"
     ],
-    relacionados: ["responsabilidade", "coragem", "sonho", "destino", "individualidade"]
+    "relacionados": [
+      "responsabilidade",
+      "coragem",
+      "sonho",
+      "destino",
+      "individualidade"
+    ]
   },
   {
-    id: "igualdade",
-    termos: ["igualdade", "equivalência", "paridade"],
-    frases: [
+    "id": "igualdade",
+    "termos": [
+      "igualdade",
+      "equivalência",
+      "paridade"
+    ],
+    "frases": [
       "todos terem as mesmas chances",
       "não haver diferença de tratamento",
       "reconhecer que ninguém vale mais que ninguém",
@@ -364,12 +772,23 @@ const CONCEPTS = [
       "tratar rico e pobre do mesmo jeito",
       "ninguém ficar para trás na fila"
     ],
-    relacionados: ["justica", "respeito", "solidariedade", "humildade", "diversidade"]
+    "relacionados": [
+      "justica",
+      "respeito",
+      "solidariedade",
+      "humildade",
+      "diversidade"
+    ]
   },
   {
-    id: "respeito",
-    termos: ["respeito", "consideração", "reverência", "deferência"],
-    frases: [
+    "id": "respeito",
+    "termos": [
+      "respeito",
+      "consideração",
+      "reverência",
+      "deferência"
+    ],
+    "frases": [
       "ouvir o outro sem julgar",
       "tratar com educação mesmo discordando",
       "reconhecer o valor de cada um",
@@ -377,12 +796,26 @@ const CONCEPTS = [
       "pedir licença antes de opinar sobre a vida alheia",
       "tratar o outro como gostaria de ser tratado"
     ],
-    relacionados: ["humildade", "honestidade", "igualdade", "confianca", "justica", "limite"]
+    "ditados": [
+      "Faça aos outros o que gostaria que fizessem a você."
+    ],
+    "relacionados": [
+      "humildade",
+      "honestidade",
+      "igualdade",
+      "confianca",
+      "justica",
+      "limite"
+    ]
   },
   {
-    id: "humildade",
-    termos: ["humildade", "simplicidade", "modéstia"],
-    frases: [
+    "id": "humildade",
+    "termos": [
+      "humildade",
+      "simplicidade",
+      "modéstia"
+    ],
+    "frases": [
       "reconhecer os próprios limites",
       "não se achar melhor que ninguém",
       "aceitar ajuda sem vergonha",
@@ -390,12 +823,24 @@ const CONCEPTS = [
       "admitir quando não sabe",
       "dar valor às coisas simples da vida"
     ],
-    relacionados: ["respeito", "sabedoria", "gratidao", "vergonha", "orgulho", "aceitacao"]
+    "relacionados": [
+      "respeito",
+      "sabedoria",
+      "gratidao",
+      "vergonha",
+      "orgulho",
+      "aceitacao"
+    ]
   },
   {
-    id: "generosidade",
-    termos: ["generosidade", "altruísmo", "bondade", "desprendimento"],
-    frases: [
+    "id": "generosidade",
+    "termos": [
+      "generosidade",
+      "altruísmo",
+      "bondade",
+      "desprendimento"
+    ],
+    "frases": [
       "dar sem esperar receber",
       "estender a mão a quem precisa",
       "dividir o pouco que se tem",
@@ -403,12 +848,24 @@ const CONCEPTS = [
       "abrir mão do próprio conforto por alguém",
       "doar o tempo que também é escasso"
     ],
-    relacionados: ["solidariedade", "amor", "gratidao", "respeito", "gentileza", "compaixao"]
+    "relacionados": [
+      "solidariedade",
+      "amor",
+      "gratidao",
+      "respeito",
+      "gentileza",
+      "compaixao"
+    ]
   },
   {
-    id: "paciencia",
-    termos: ["paciência", "tolerância", "serenidade", "persistência calma"],
-    frases: [
+    "id": "paciencia",
+    "termos": [
+      "paciência",
+      "tolerância",
+      "serenidade",
+      "persistência calma"
+    ],
+    "frases": [
       "esperar sem se desesperar",
       "contar até dez antes de reagir",
       "dar tempo ao tempo",
@@ -416,12 +873,31 @@ const CONCEPTS = [
       "não perder a cabeça mesmo irritado",
       "esperar a fruta amadurecer no seu tempo"
     ],
-    relacionados: ["calma", "perseveranca", "sabedoria", "raiva", "rotina"]
+    "ditados": [
+      "Devagar se vai ao longe.",
+      "A pressa é inimiga da perfeição."
+    ],
+    "expressoes": [
+      "engolir sapos",
+      "engolir em seco"
+    ],
+    "relacionados": [
+      "calma",
+      "perseveranca",
+      "sabedoria",
+      "raiva",
+      "rotina"
+    ]
   },
   {
-    id: "perseveranca",
-    termos: ["perseverança", "persistência", "determinação", "força de vontade"],
-    frases: [
+    "id": "perseveranca",
+    "termos": [
+      "perseverança",
+      "persistência",
+      "determinação",
+      "força de vontade"
+    ],
+    "frases": [
       "não desistir mesmo depois de cair",
       "continuar tentando até conseguir",
       "levantar a cada queda",
@@ -429,12 +905,28 @@ const CONCEPTS = [
       "seguir mesmo quando ninguém mais acredita",
       "insistir até a porta se abrir"
     ],
-    relacionados: ["coragem", "esperanca", "sucesso", "fracasso", "paciencia", "superacao"]
+    "ditados": [
+      "Água mole em pedra dura, tanto bate até que fura.",
+      "De grão em grão, a galinha enche o papo."
+    ],
+    "relacionados": [
+      "coragem",
+      "esperanca",
+      "sucesso",
+      "fracasso",
+      "paciencia",
+      "superacao"
+    ]
   },
   {
-    id: "sabedoria",
-    termos: ["sabedoria", "sensatez", "discernimento", "prudência"],
-    frases: [
+    "id": "sabedoria",
+    "termos": [
+      "sabedoria",
+      "sensatez",
+      "discernimento",
+      "prudência"
+    ],
+    "frases": [
       "aprender com os próprios erros",
       "saber a hora certa de agir",
       "enxergar além do óbvio",
@@ -442,12 +934,26 @@ const CONCEPTS = [
       "saber quando ficar calado",
       "entender que nem tudo precisa de resposta imediata"
     ],
-    relacionados: ["conhecimento", "humildade", "calma", "paciencia", "crescimento"]
+    "ditados": [
+      "Mais vale um pássaro na mão do que dois voando.",
+      "A experiência é a melhor mestra."
+    ],
+    "relacionados": [
+      "conhecimento",
+      "humildade",
+      "calma",
+      "paciencia",
+      "crescimento"
+    ]
   },
   {
-    id: "integridade",
-    termos: ["integridade", "retidão de caráter", "coerência"],
-    frases: [
+    "id": "integridade",
+    "termos": [
+      "integridade",
+      "retidão de caráter",
+      "coerência"
+    ],
+    "frases": [
       "agir do mesmo jeito quando ninguém está vendo",
       "ser fiel aos próprios valores",
       "não se corromper por interesse",
@@ -455,12 +961,22 @@ const CONCEPTS = [
       "fazer o certo mesmo quando o errado seria mais fácil",
       "não vender os princípios por vantagem"
     ],
-    relacionados: ["honestidade", "responsabilidade", "justica", "confianca"]
+    "relacionados": [
+      "honestidade",
+      "responsabilidade",
+      "justica",
+      "confianca"
+    ]
   },
   {
-    id: "responsabilidade",
-    termos: ["responsabilidade", "comprometimento", "dever", "obrigação"],
-    frases: [
+    "id": "responsabilidade",
+    "termos": [
+      "responsabilidade",
+      "comprometimento",
+      "dever",
+      "obrigação"
+    ],
+    "frases": [
       "assumir as consequências dos próprios atos",
       "cumprir o que foi prometido",
       "não jogar a culpa nos outros",
@@ -468,12 +984,27 @@ const CONCEPTS = [
       "colocar a mão na consciência",
       "não deixar para amanhã o que é urgente hoje"
     ],
-    relacionados: ["integridade", "liberdade", "trabalho", "justica", "organizacao"]
+    "expressoes": [
+      "colocar os pingos nos is",
+      "acertar as contas"
+    ],
+    "relacionados": [
+      "integridade",
+      "liberdade",
+      "trabalho",
+      "justica",
+      "organizacao"
+    ]
   },
   {
-    id: "tempo",
-    termos: ["tempo", "passagem do tempo", "temporalidade", "duração"],
-    frases: [
+    "id": "tempo",
+    "termos": [
+      "tempo",
+      "passagem do tempo",
+      "temporalidade",
+      "duração"
+    ],
+    "frases": [
       "o tempo não para para ninguém",
       "cada coisa no seu momento",
       "o relógio da vida correndo",
@@ -481,12 +1012,27 @@ const CONCEPTS = [
       "perceber que o tempo voou sem avisar",
       "correr contra o relógio"
     ],
-    relacionados: ["mudanca", "saudade", "destino", "vida", "urgencia", "rotina"]
+    "ditados": [
+      "Tudo tem seu tempo."
+    ],
+    "relacionados": [
+      "mudanca",
+      "saudade",
+      "destino",
+      "vida",
+      "urgencia",
+      "rotina"
+    ]
   },
   {
-    id: "mudanca",
-    termos: ["mudança", "transformação", "renovação", "virada"],
-    frases: [
+    "id": "mudanca",
+    "termos": [
+      "mudança",
+      "transformação",
+      "renovação",
+      "virada"
+    ],
+    "frases": [
       "virar a página",
       "nada é para sempre",
       "sair da zona de conforto",
@@ -494,12 +1040,27 @@ const CONCEPTS = [
       "deixar para trás o que já não serve",
       "encarar um novo capítulo"
     ],
-    relacionados: ["tempo", "coragem", "destino", "sonho", "recomeco", "crescimento"]
+    "ditados": [
+      "Antes tarde do que nunca."
+    ],
+    "relacionados": [
+      "tempo",
+      "coragem",
+      "destino",
+      "sonho",
+      "recomeco",
+      "crescimento"
+    ]
   },
   {
-    id: "recomeco",
-    termos: ["recomeço", "novo começo", "reinício", "renascimento"],
-    frases: [
+    "id": "recomeco",
+    "termos": [
+      "recomeço",
+      "novo começo",
+      "reinício",
+      "renascimento"
+    ],
+    "frases": [
       "virar a página e começar outro capítulo",
       "levantar a poeira e seguir em frente",
       "dar a si mesmo uma segunda chance",
@@ -507,12 +1068,23 @@ const CONCEPTS = [
       "plantar de novo depois da colheita ruim",
       "acordar disposto a tentar de novo"
     ],
-    relacionados: ["mudanca", "superacao", "esperanca", "coragem", "alivio"]
+    "relacionados": [
+      "mudanca",
+      "superacao",
+      "esperanca",
+      "coragem",
+      "alivio"
+    ]
   },
   {
-    id: "destino",
-    termos: ["destino", "sina", "fado", "desígnio"],
-    frases: [
+    "id": "destino",
+    "termos": [
+      "destino",
+      "sina",
+      "fado",
+      "desígnio"
+    ],
+    "frases": [
       "o que está escrito, se cumpre",
       "cada um tem seu caminho traçado",
       "as voltas que a vida dá",
@@ -520,12 +1092,27 @@ const CONCEPTS = [
       "encontrar alguém no momento certo por acaso",
       "seguir o rumo que a vida escolheu"
     ],
-    relacionados: ["sorte", "tempo", "mudanca", "vida", "sonho", "fe"]
+    "ditados": [
+      "Deus escreve certo por linhas tortas."
+    ],
+    "relacionados": [
+      "sorte",
+      "tempo",
+      "mudanca",
+      "vida",
+      "sonho",
+      "fe"
+    ]
   },
   {
-    id: "sorte",
-    termos: ["sorte", "acaso", "fortuna", "coincidência"],
-    frases: [
+    "id": "sorte",
+    "termos": [
+      "sorte",
+      "acaso",
+      "fortuna",
+      "coincidência"
+    ],
+    "frases": [
       "estar no lugar certo na hora certa",
       "ganhar sem nem esperar",
       "as coisas se encaixarem por acaso",
@@ -533,12 +1120,30 @@ const CONCEPTS = [
       "cair do céu bem na hora que precisava",
       "dar certo sem nem ter planejado"
     ],
-    relacionados: ["destino", "surpresa", "sucesso", "fracasso", "abundancia"]
+    "ditados": [
+      "Deus ajuda quem cedo madruga.",
+      "Quem não arrisca, não petisca."
+    ],
+    "expressoes": [
+      "pegar carona na oportunidade",
+      "aproveitar a deixa"
+    ],
+    "relacionados": [
+      "destino",
+      "surpresa",
+      "sucesso",
+      "fracasso",
+      "abundancia"
+    ]
   },
   {
-    id: "verdade",
-    termos: ["verdade", "veracidade", "realidade dos fatos"],
-    frases: [
+    "id": "verdade",
+    "termos": [
+      "verdade",
+      "veracidade",
+      "realidade dos fatos"
+    ],
+    "frases": [
       "os fatos como realmente aconteceram",
       "nada a esconder",
       "a verdade sempre vem à tona",
@@ -546,12 +1151,22 @@ const CONCEPTS = [
       "não maquiar os fatos",
       "dizer o que é, sem enfeitar"
     ],
-    relacionados: ["honestidade", "mentira", "conhecimento", "integridade"]
+    "relacionados": [
+      "honestidade",
+      "mentira",
+      "conhecimento",
+      "integridade"
+    ]
   },
   {
-    id: "mentira",
-    termos: ["mentira", "falsidade", "engano", "inverdade"],
-    frases: [
+    "id": "mentira",
+    "termos": [
+      "mentira",
+      "falsidade",
+      "engano",
+      "inverdade"
+    ],
+    "frases": [
       "contar uma história que não é real",
       "esconder a verdade por trás",
       "enganar para não se comprometer",
@@ -559,12 +1174,27 @@ const CONCEPTS = [
       "inventar uma desculpa na hora",
       "maquiar a realidade para não magoar"
     ],
-    relacionados: ["verdade", "traicao", "vergonha", "odio", "duvida"]
+    "ditados": [
+      "A mentira tem perna curta.",
+      "Quem conta um conto aumenta um ponto."
+    ],
+    "relacionados": [
+      "verdade",
+      "traicao",
+      "vergonha",
+      "odio",
+      "duvida"
+    ]
   },
   {
-    id: "duvida",
-    termos: ["dúvida", "incerteza", "indecisão", "hesitação"],
-    frases: [
+    "id": "duvida",
+    "termos": [
+      "dúvida",
+      "incerteza",
+      "indecisão",
+      "hesitação"
+    ],
+    "frases": [
       "não saber para que lado ir",
       "ficar em cima do muro",
       "pesar os prós e contras sem chegar a lugar nenhum",
@@ -572,12 +1202,30 @@ const CONCEPTS = [
       "não confiar totalmente no que ouviu",
       "bater o pé sem convicção"
     ],
-    relacionados: ["decisao", "medo", "confianca", "mentira", "curiosidade"]
+    "ditados": [
+      "Antes prevenir do que remediar."
+    ],
+    "expressoes": [
+      "estar com a pulga atrás da orelha",
+      "colocar minhoca na cabeça"
+    ],
+    "relacionados": [
+      "decisao",
+      "medo",
+      "confianca",
+      "mentira",
+      "curiosidade"
+    ]
   },
   {
-    id: "decisao",
-    termos: ["decisão", "escolha", "resolução", "deliberação"],
-    frases: [
+    "id": "decisao",
+    "termos": [
+      "decisão",
+      "escolha",
+      "resolução",
+      "deliberação"
+    ],
+    "frases": [
       "bater o martelo de uma vez",
       "pesar os prós e contras antes de agir",
       "seguir o coração ou a razão",
@@ -585,12 +1233,31 @@ const CONCEPTS = [
       "não voltar atrás depois de decidido",
       "assumir as consequências da escolha feita"
     ],
-    relacionados: ["duvida", "coragem", "responsabilidade", "destino", "planejamento"]
+    "ditados": [
+      "Quem não arrisca, não petisca.",
+      "Antes tarde do que nunca."
+    ],
+    "expressoes": [
+      "bater o martelo",
+      "cortar o mal pela raiz"
+    ],
+    "relacionados": [
+      "duvida",
+      "coragem",
+      "responsabilidade",
+      "destino",
+      "planejamento"
+    ]
   },
   {
-    id: "conhecimento",
-    termos: ["conhecimento", "saber", "aprendizado", "instrução"],
-    frases: [
+    "id": "conhecimento",
+    "termos": [
+      "conhecimento",
+      "saber",
+      "aprendizado",
+      "instrução"
+    ],
+    "frases": [
       "quanto mais se aprende, mais se percebe o que falta saber",
       "estudar para entender o mundo",
       "buscar respostas para as próprias perguntas",
@@ -598,12 +1265,22 @@ const CONCEPTS = [
       "juntar teoria e prática na cabeça",
       "nunca parar de se atualizar"
     ],
-    relacionados: ["sabedoria", "ignorancia", "criatividade", "verdade", "curiosidade"]
+    "relacionados": [
+      "sabedoria",
+      "ignorancia",
+      "criatividade",
+      "verdade",
+      "curiosidade"
+    ]
   },
   {
-    id: "ignorancia",
-    termos: ["ignorância", "desconhecimento", "falta de informação"],
-    frases: [
+    "id": "ignorancia",
+    "termos": [
+      "ignorância",
+      "desconhecimento",
+      "falta de informação"
+    ],
+    "frases": [
       "não saber o que não sabe",
       "agir sem entender as consequências",
       "confundir opinião com fato",
@@ -611,12 +1288,25 @@ const CONCEPTS = [
       "falar com convicção sobre o que não conhece",
       "recusar-se a aprender por teimosia"
     ],
-    relacionados: ["conhecimento", "medo", "raiva", "nojo"]
+    "expressoes": [
+      "fazer vista grossa"
+    ],
+    "relacionados": [
+      "conhecimento",
+      "medo",
+      "raiva",
+      "nojo"
+    ]
   },
   {
-    id: "curiosidade",
-    termos: ["curiosidade", "interesse", "vontade de saber", "inquietação intelectual"],
-    frases: [
+    "id": "curiosidade",
+    "termos": [
+      "curiosidade",
+      "interesse",
+      "vontade de saber",
+      "inquietação intelectual"
+    ],
+    "frases": [
       "querer saber como as coisas funcionam",
       "não resistir a espiar o que está escondido",
       "fazer perguntas até entender de verdade",
@@ -624,12 +1314,25 @@ const CONCEPTS = [
       "seguir o rastro de uma pergunta sem resposta",
       "sentir vontade de abrir e ver por dentro"
     ],
-    relacionados: ["conhecimento", "surpresa", "criatividade", "duvida"]
+    "ditados": [
+      "A curiosidade matou o gato."
+    ],
+    "relacionados": [
+      "conhecimento",
+      "surpresa",
+      "criatividade",
+      "duvida"
+    ]
   },
   {
-    id: "poder",
-    termos: ["poder", "autoridade", "domínio", "influência"],
-    frases: [
+    "id": "poder",
+    "termos": [
+      "poder",
+      "autoridade",
+      "domínio",
+      "influência"
+    ],
+    "frases": [
       "ter a palavra final",
       "estar no comando da situação",
       "mandar mais do que os outros",
@@ -637,12 +1340,23 @@ const CONCEPTS = [
       "decidir o destino de quem está ao redor",
       "ter a última palavra em qualquer discussão"
     ],
-    relacionados: ["liberdade", "justica", "dinheiro", "responsabilidade", "controle"]
+    "relacionados": [
+      "liberdade",
+      "justica",
+      "dinheiro",
+      "responsabilidade",
+      "controle"
+    ]
   },
   {
-    id: "controle",
-    termos: ["controle", "domínio próprio", "autocontrole", "gestão"],
-    frases: [
+    "id": "controle",
+    "termos": [
+      "controle",
+      "domínio próprio",
+      "autocontrole",
+      "gestão"
+    ],
+    "frases": [
       "manter as rédeas da situação",
       "não deixar a emoção tomar conta",
       "ter tudo sob controle mesmo no caos",
@@ -650,12 +1364,27 @@ const CONCEPTS = [
       "conduzir as coisas sem perder o rumo",
       "não deixar a situação escapar das mãos"
     ],
-    relacionados: ["poder", "calma", "organizacao", "disciplina", "foco"]
+    "expressoes": [
+      "ter as rédeas na mão",
+      "segurar as pontas"
+    ],
+    "relacionados": [
+      "poder",
+      "calma",
+      "organizacao",
+      "disciplina",
+      "foco"
+    ]
   },
   {
-    id: "dinheiro",
-    termos: ["dinheiro", "riqueza", "fortuna financeira", "capital"],
-    frases: [
+    "id": "dinheiro",
+    "termos": [
+      "dinheiro",
+      "riqueza",
+      "fortuna financeira",
+      "capital"
+    ],
+    "frases": [
       "ganhar o suficiente para viver bem",
       "juntar para o futuro",
       "não deixar faltar o essencial",
@@ -663,12 +1392,28 @@ const CONCEPTS = [
       "fechar o mês no azul",
       "guardar para os dias de chuva"
     ],
-    relacionados: ["trabalho", "sucesso", "poder", "sorte", "abundancia", "escassez"]
+    "ditados": [
+      "Farinha pouca, meu pirão primeiro.",
+      "Dinheiro não traz felicidade, mas ajuda a procurar."
+    ],
+    "relacionados": [
+      "trabalho",
+      "sucesso",
+      "poder",
+      "sorte",
+      "abundancia",
+      "escassez"
+    ]
   },
   {
-    id: "abundancia",
-    termos: ["abundância", "fartura", "prosperidade", "excesso positivo"],
-    frases: [
+    "id": "abundancia",
+    "termos": [
+      "abundância",
+      "fartura",
+      "prosperidade",
+      "excesso positivo"
+    ],
+    "frases": [
       "ter mais do que o suficiente",
       "a mesa nunca ficar vazia",
       "colher mais do que se plantou",
@@ -676,12 +1421,27 @@ const CONCEPTS = [
       "viver na fartura depois de tempos difíceis",
       "não precisar contar para ver se dá"
     ],
-    relacionados: ["dinheiro", "sorte", "gratidao", "sucesso", "luxo"]
+    "expressoes": [
+      "nadar em dinheiro",
+      "estar podre de rico"
+    ],
+    "relacionados": [
+      "dinheiro",
+      "sorte",
+      "gratidao",
+      "sucesso",
+      "luxo"
+    ]
   },
   {
-    id: "escassez",
-    termos: ["escassez", "falta", "carência", "penúria"],
-    frases: [
+    "id": "escassez",
+    "termos": [
+      "escassez",
+      "falta",
+      "carência",
+      "penúria"
+    ],
+    "frases": [
       "não ter o suficiente para todos",
       "contar cada centavo até o fim do mês",
       "sentir que sempre falta alguma coisa",
@@ -689,12 +1449,26 @@ const CONCEPTS = [
       "apertar o cinto para chegar até o fim do mês",
       "viver na base do essencial"
     ],
-    relacionados: ["dinheiro", "fracasso", "urgencia", "responsabilidade"]
+    "expressoes": [
+      "estar liso",
+      "estar sem eira nem beira"
+    ],
+    "relacionados": [
+      "dinheiro",
+      "fracasso",
+      "urgencia",
+      "responsabilidade"
+    ]
   },
   {
-    id: "luxo",
-    termos: ["luxo", "requinte", "extravagância", "opulência"],
-    frases: [
+    "id": "luxo",
+    "termos": [
+      "luxo",
+      "requinte",
+      "extravagância",
+      "opulência"
+    ],
+    "frases": [
       "se dar ao luxo de não se preocupar com o preço",
       "viver rodeado de conforto",
       "querer sempre o melhor do melhor",
@@ -702,12 +1476,22 @@ const CONCEPTS = [
       "cercar-se de coisas caras e refinadas",
       "dar-se um mimo de vez em quando"
     ],
-    relacionados: ["abundancia", "beleza", "vaidade", "dinheiro"]
+    "relacionados": [
+      "abundancia",
+      "beleza",
+      "vaidade",
+      "dinheiro"
+    ]
   },
   {
-    id: "ganancia",
-    termos: ["ganância", "avareza", "cobiça", "sofreguidão"],
-    frases: [
+    "id": "ganancia",
+    "termos": [
+      "ganância",
+      "avareza",
+      "cobiça",
+      "sofreguidão"
+    ],
+    "frases": [
       "nunca achar que é o suficiente",
       "querer sempre mais, custe o que custar",
       "não dividir por medo de ficar com menos",
@@ -715,12 +1499,31 @@ const CONCEPTS = [
       "guardar tudo para si mesmo",
       "não conseguir se contentar com o que já tem"
     ],
-    relacionados: ["inveja", "dinheiro", "poder", "competicao"]
+    "ditados": [
+      "Quem tudo quer, tudo perde.",
+      "A cobiça rompe o saco."
+    ],
+    "expressoes": [
+      "tirar proveito da situação",
+      "puxar a brasa para a própria sardinha"
+    ],
+    "relacionados": [
+      "inveja",
+      "dinheiro",
+      "poder",
+      "competicao"
+    ]
   },
   {
-    id: "sucesso",
-    termos: ["sucesso", "êxito", "triunfo", "vitória", "realização"],
-    frases: [
+    "id": "sucesso",
+    "termos": [
+      "sucesso",
+      "êxito",
+      "triunfo",
+      "vitória",
+      "realização"
+    ],
+    "frases": [
       "colher os frutos do esforço",
       "alcançar o que sempre sonhou",
       "chegar lá depois de muita luta",
@@ -728,12 +1531,24 @@ const CONCEPTS = [
       "ver o trabalho duro finalmente valer a pena",
       "cruzar a linha de chegada depois de tanto esforço"
     ],
-    relacionados: ["fracasso", "perseveranca", "orgulho", "trabalho", "dinheiro", "superacao"]
+    "relacionados": [
+      "fracasso",
+      "perseveranca",
+      "orgulho",
+      "trabalho",
+      "dinheiro",
+      "superacao"
+    ]
   },
   {
-    id: "fracasso",
-    termos: ["fracasso", "derrota", "insucesso", "decepção"],
-    frases: [
+    "id": "fracasso",
+    "termos": [
+      "fracasso",
+      "derrota",
+      "insucesso",
+      "decepção"
+    ],
+    "frases": [
       "não conseguir apesar do esforço",
       "ver o plano desmoronar",
       "cair depois de tentar tanto",
@@ -741,12 +1556,27 @@ const CONCEPTS = [
       "sair de mãos vazias depois de tanto investir",
       "sentir que todo o esforço foi em vão"
     ],
-    relacionados: ["sucesso", "desespero", "perseveranca", "tristeza", "arrependimento"]
+    "expressoes": [
+      "dar com os burros n'água",
+      "jogar a toalha",
+      "ficar a ver navios"
+    ],
+    "relacionados": [
+      "sucesso",
+      "desespero",
+      "perseveranca",
+      "tristeza",
+      "arrependimento"
+    ]
   },
   {
-    id: "arrependimento",
-    termos: ["arrependimento", "remorso", "pesar por algo feito"],
-    frases: [
+    "id": "arrependimento",
+    "termos": [
+      "arrependimento",
+      "remorso",
+      "pesar por algo feito"
+    ],
+    "frases": [
       "desejar poder voltar atrás no tempo",
       "não conseguir parar de pensar no que fez",
       "sentir que deveria ter agido diferente",
@@ -754,12 +1584,28 @@ const CONCEPTS = [
       "carregar aquilo como um peso na consciência",
       "olhar para trás e se perguntar 'e se'"
     ],
-    relacionados: ["culpa", "fracasso", "perdao", "tristeza"]
+    "ditados": [
+      "Antes tarde do que nunca.",
+      "Antes prevenir do que remediar."
+    ],
+    "expressoes": [
+      "chorar sobre o leite derramado"
+    ],
+    "relacionados": [
+      "culpa",
+      "fracasso",
+      "perdao",
+      "tristeza"
+    ]
   },
   {
-    id: "culpa",
-    termos: ["culpa", "peso na consciência", "responsabilidade por um erro"],
-    frases: [
+    "id": "culpa",
+    "termos": [
+      "culpa",
+      "peso na consciência",
+      "responsabilidade por um erro"
+    ],
+    "frases": [
       "não conseguir se perdoar",
       "sentir que fez algo errado",
       "carregar aquilo nas costas",
@@ -767,12 +1613,28 @@ const CONCEPTS = [
       "revirar a mesma cena na cabeça sem parar",
       "pedir desculpas mesmo sem saber se é o suficiente"
     ],
-    relacionados: ["arrependimento", "vergonha", "perdao", "responsabilidade"]
+    "ditados": [
+      "Errar é humano, perdoar é divino."
+    ],
+    "expressoes": [
+      "pagar o pato"
+    ],
+    "relacionados": [
+      "arrependimento",
+      "vergonha",
+      "perdao",
+      "responsabilidade"
+    ]
   },
   {
-    id: "perdao",
-    termos: ["perdão", "reconciliação", "absolvição", "clemência"],
-    frases: [
+    "id": "perdao",
+    "termos": [
+      "perdão",
+      "reconciliação",
+      "absolvição",
+      "clemência"
+    ],
+    "frases": [
       "soltar o que machucou para poder seguir",
       "dar uma segunda chance",
       "deixar a mágoa de lado",
@@ -780,12 +1642,25 @@ const CONCEPTS = [
       "fazer as pazes consigo mesmo",
       "escolher não carregar aquele peso para sempre"
     ],
-    relacionados: ["culpa", "reconciliacao", "amor", "alivio", "compaixao"]
+    "ditados": [
+      "Errar é humano, perdoar é divino."
+    ],
+    "relacionados": [
+      "culpa",
+      "reconciliacao",
+      "amor",
+      "alivio",
+      "compaixao"
+    ]
   },
   {
-    id: "reconciliacao",
-    termos: ["reconciliação", "reaproximação", "fazer as pazes"],
-    frases: [
+    "id": "reconciliacao",
+    "termos": [
+      "reconciliação",
+      "reaproximação",
+      "fazer as pazes"
+    ],
+    "frases": [
       "voltar a se falar depois de um tempo calado",
       "estender a mão primeiro",
       "deixar o orgulho de lado para se reaproximar",
@@ -793,12 +1668,27 @@ const CONCEPTS = [
       "curar a ferida com uma conversa sincera",
       "recomeçar depois de uma briga feia"
     ],
-    relacionados: ["perdao", "amor", "amizade", "familia", "confianca"]
+    "expressoes": [
+      "fazer as pazes",
+      "virar a página"
+    ],
+    "relacionados": [
+      "perdao",
+      "amor",
+      "amizade",
+      "familia",
+      "confianca"
+    ]
   },
   {
-    id: "morte",
-    termos: ["morte", "falecimento", "fim da vida", "partida"],
-    frases: [
+    "id": "morte",
+    "termos": [
+      "morte",
+      "falecimento",
+      "fim da vida",
+      "partida"
+    ],
+    "frases": [
       "dizer o último adeus",
       "a vida que se apaga",
       "ficar só a lembrança",
@@ -806,12 +1696,28 @@ const CONCEPTS = [
       "a ausência que dói todo dia",
       "guardar a pessoa viva na memória"
     ],
-    relacionados: ["vida", "saudade", "tristeza", "tempo", "destino"]
+    "expressoes": [
+      "bater as botas",
+      "entregar os pontos",
+      "ir dessa para melhor"
+    ],
+    "relacionados": [
+      "vida",
+      "saudade",
+      "tristeza",
+      "tempo",
+      "destino"
+    ]
   },
   {
-    id: "vida",
-    termos: ["vida", "existência", "jornada", "trajetória"],
-    frases: [
+    "id": "vida",
+    "termos": [
+      "vida",
+      "existência",
+      "jornada",
+      "trajetória"
+    ],
+    "frases": [
       "viver um dia de cada vez",
       "aproveitar cada momento",
       "a vida é feita de escolhas",
@@ -819,12 +1725,24 @@ const CONCEPTS = [
       "dar valor ao tempo que se tem",
       "encarar cada fase como ela vem"
     ],
-    relacionados: ["morte", "tempo", "sonho", "felicidade", "destino", "crescimento"]
+    "relacionados": [
+      "morte",
+      "tempo",
+      "sonho",
+      "felicidade",
+      "destino",
+      "crescimento"
+    ]
   },
   {
-    id: "sonho",
-    termos: ["sonho", "aspiração", "ambição", "desejo de realização"],
-    frases: [
+    "id": "sonho",
+    "termos": [
+      "sonho",
+      "aspiração",
+      "ambição",
+      "desejo de realização"
+    ],
+    "frases": [
       "correr atrás do que se deseja",
       "imaginar um futuro melhor",
       "não desistir do que se planeja",
@@ -832,12 +1750,24 @@ const CONCEPTS = [
       "guardar aquilo no fundo do coração até realizar",
       "trabalhar duro por algo que ainda não existe"
     ],
-    relacionados: ["esperanca", "sucesso", "perseveranca", "liberdade", "criatividade", "inspiracao"]
+    "relacionados": [
+      "esperanca",
+      "sucesso",
+      "perseveranca",
+      "liberdade",
+      "criatividade",
+      "inspiracao"
+    ]
   },
   {
-    id: "amizade",
-    termos: ["amizade", "companheirismo", "camaradagem", "confraternização"],
-    frases: [
+    "id": "amizade",
+    "termos": [
+      "amizade",
+      "companheirismo",
+      "camaradagem",
+      "confraternização"
+    ],
+    "frases": [
       "ter alguém para contar tudo",
       "estar junto nos bons e maus momentos",
       "rir das mesmas piadas há anos",
@@ -845,12 +1775,28 @@ const CONCEPTS = [
       "aparecer quando mais precisa, sem precisar chamar",
       "ter aquele amigo que entende sem precisar explicar"
     ],
-    relacionados: ["amor", "lealdade", "confianca", "solidao", "familia", "gentileza"]
+    "ditados": [
+      "Diz-me com quem andas que te direi quem és.",
+      "É na necessidade que se conhece o amigo verdadeiro."
+    ],
+    "relacionados": [
+      "amor",
+      "lealdade",
+      "confianca",
+      "solidao",
+      "familia",
+      "gentileza"
+    ]
   },
   {
-    id: "familia",
-    termos: ["família", "parentes", "lar", "raízes"],
-    frases: [
+    "id": "familia",
+    "termos": [
+      "família",
+      "parentes",
+      "lar",
+      "raízes"
+    ],
+    "frases": [
       "ter um porto seguro para voltar",
       "sangue que puxa mesmo de longe",
       "criar laços que duram a vida toda",
@@ -858,12 +1804,25 @@ const CONCEPTS = [
       "sentar à mesa todo domingo com todo mundo junto",
       "saber que sempre tem para onde voltar"
     ],
-    relacionados: ["amor", "amizade", "saudade", "respeito", "infancia"]
+    "ditados": [
+      "Filho de peixe, peixinho é."
+    ],
+    "relacionados": [
+      "amor",
+      "amizade",
+      "saudade",
+      "respeito",
+      "infancia"
+    ]
   },
   {
-    id: "confianca",
-    termos: ["confiança", "credibilidade", "segurança na relação"],
-    frases: [
+    "id": "confianca",
+    "termos": [
+      "confiança",
+      "credibilidade",
+      "segurança na relação"
+    ],
+    "frases": [
       "poder contar com alguém de olhos fechados",
       "acreditar na palavra do outro",
       "não precisar duvidar",
@@ -871,12 +1830,26 @@ const CONCEPTS = [
       "dormir tranquilo sabendo que pode contar com aquela pessoa",
       "entregar as chaves de casa sem pensar duas vezes"
     ],
-    relacionados: ["lealdade", "honestidade", "amizade", "traicao", "amor"]
+    "expressoes": [
+      "pôr a mão no fogo por alguém"
+    ],
+    "relacionados": [
+      "lealdade",
+      "honestidade",
+      "amizade",
+      "traicao",
+      "amor"
+    ]
   },
   {
-    id: "traicao",
-    termos: ["traição", "deslealdade", "infidelidade", "quebra de confiança"],
-    frases: [
+    "id": "traicao",
+    "termos": [
+      "traição",
+      "deslealdade",
+      "infidelidade",
+      "quebra de confiança"
+    ],
+    "frases": [
       "apunhalar pelas costas",
       "quebrar a confiança de quem acreditava",
       "trair quem sempre esteve ao lado",
@@ -884,12 +1857,27 @@ const CONCEPTS = [
       "ser passado para trás por quem menos esperava",
       "perceber tarde demais que era tudo mentira"
     ],
-    relacionados: ["confianca", "mentira", "odio", "ciume", "lealdade"]
+    "expressoes": [
+      "virar a casaca",
+      "dar uma facada pelas costas"
+    ],
+    "relacionados": [
+      "confianca",
+      "mentira",
+      "odio",
+      "ciume",
+      "lealdade"
+    ]
   },
   {
-    id: "rejeicao",
-    termos: ["rejeição", "recusa", "exclusão pessoal", "desprezo"],
-    frases: [
+    "id": "rejeicao",
+    "termos": [
+      "rejeição",
+      "recusa",
+      "exclusão pessoal",
+      "desprezo"
+    ],
+    "frases": [
       "não ser escolhido",
       "sentir a porta se fechar na cara",
       "ouvir um não depois de se abrir",
@@ -897,12 +1885,27 @@ const CONCEPTS = [
       "não ser convidado para o grupo",
       "ficar de fora sem entender o motivo"
     ],
-    relacionados: ["tristeza", "vergonha", "exclusao", "aceitacao", "solidao"]
+    "expressoes": [
+      "levar um fora",
+      "levar um pé na porta"
+    ],
+    "relacionados": [
+      "tristeza",
+      "vergonha",
+      "exclusao",
+      "aceitacao",
+      "solidao"
+    ]
   },
   {
-    id: "aceitacao",
-    termos: ["aceitação", "acolhimento", "pertencimento", "reconhecimento do outro"],
-    frases: [
+    "id": "aceitacao",
+    "termos": [
+      "aceitação",
+      "acolhimento",
+      "pertencimento",
+      "reconhecimento do outro"
+    ],
+    "frases": [
       "sentir que finalmente pertence a algum lugar",
       "ser recebido de braços abertos",
       "não precisar fingir ser outra pessoa",
@@ -910,12 +1913,22 @@ const CONCEPTS = [
       "sentir-se em casa mesmo longe de casa",
       "ser aceito exatamente como é"
     ],
-    relacionados: ["pertencimento", "amizade", "familia", "respeito", "rejeicao"]
+    "relacionados": [
+      "pertencimento",
+      "amizade",
+      "familia",
+      "respeito",
+      "rejeicao"
+    ]
   },
   {
-    id: "pertencimento",
-    termos: ["pertencimento", "senso de comunidade", "identidade coletiva"],
-    frases: [
+    "id": "pertencimento",
+    "termos": [
+      "pertencimento",
+      "senso de comunidade",
+      "identidade coletiva"
+    ],
+    "frases": [
       "sentir que faz parte de algo maior",
       "reconhecer-se num grupo",
       "ter um lugar que é seu de verdade",
@@ -923,12 +1936,22 @@ const CONCEPTS = [
       "reconhecer a própria história numa comunidade",
       "sentir orgulho de onde veio"
     ],
-    relacionados: ["aceitacao", "familia", "amizade", "individualidade", "diversidade"]
+    "relacionados": [
+      "aceitacao",
+      "familia",
+      "amizade",
+      "individualidade",
+      "diversidade"
+    ]
   },
   {
-    id: "exclusao",
-    termos: ["exclusão", "isolamento social", "marginalização"],
-    frases: [
+    "id": "exclusao",
+    "termos": [
+      "exclusão",
+      "isolamento social",
+      "marginalização"
+    ],
+    "frases": [
       "ficar de fora do grupo",
       "não ser convidado para nada",
       "sentir-se invisível para os outros",
@@ -936,12 +1959,22 @@ const CONCEPTS = [
       "não encontrar espaço em lugar nenhum",
       "ser o último escolhido sempre"
     ],
-    relacionados: ["rejeicao", "solidao", "tristeza", "diversidade"]
+    "relacionados": [
+      "rejeicao",
+      "solidao",
+      "tristeza",
+      "diversidade"
+    ]
   },
   {
-    id: "diversidade",
-    termos: ["diversidade", "pluralidade", "diferença", "multiplicidade"],
-    frases: [
+    "id": "diversidade",
+    "termos": [
+      "diversidade",
+      "pluralidade",
+      "diferença",
+      "multiplicidade"
+    ],
+    "frases": [
       "cada um com sua própria história",
       "encontrar beleza no que é diferente",
       "muitas vozes formando um só coro",
@@ -949,12 +1982,26 @@ const CONCEPTS = [
       "somar forças mesmo sendo tão diferentes",
       "aprender com quem enxerga o mundo de outro jeito"
     ],
-    relacionados: ["igualdade", "respeito", "individualidade", "pertencimento", "empatia"]
+    "ditados": [
+      "Cada macaco no seu galho."
+    ],
+    "relacionados": [
+      "igualdade",
+      "respeito",
+      "individualidade",
+      "pertencimento",
+      "empatia"
+    ]
   },
   {
-    id: "individualidade",
-    termos: ["individualidade", "autenticidade", "identidade própria", "singularidade"],
-    frases: [
+    "id": "individualidade",
+    "termos": [
+      "individualidade",
+      "autenticidade",
+      "identidade própria",
+      "singularidade"
+    ],
+    "frases": [
       "ser quem é sem pedir desculpas",
       "não seguir a maioria só para se encaixar",
       "ter um jeito só seu de ver as coisas",
@@ -962,12 +2009,24 @@ const CONCEPTS = [
       "seguir a própria voz mesmo contra a maré",
       "construir um caminho que ninguém mais trilhou"
     ],
-    relacionados: ["liberdade", "criatividade", "diversidade", "coragem"]
+    "ditados": [
+      "Cada macaco no seu galho."
+    ],
+    "relacionados": [
+      "liberdade",
+      "criatividade",
+      "diversidade",
+      "coragem"
+    ]
   },
   {
-    id: "empatia",
-    termos: ["empatia", "compreensão do outro", "sensibilidade"],
-    frases: [
+    "id": "empatia",
+    "termos": [
+      "empatia",
+      "compreensão do outro",
+      "sensibilidade"
+    ],
+    "frases": [
       "se colocar no lugar do outro",
       "sentir a dor do outro como se fosse sua",
       "entender antes de julgar",
@@ -975,12 +2034,23 @@ const CONCEPTS = [
       "perceber o que o outro não conseguiu dizer",
       "chorar junto sem precisar de explicação"
     ],
-    relacionados: ["compaixao", "solidariedade", "generosidade", "respeito", "gentileza"]
+    "relacionados": [
+      "compaixao",
+      "solidariedade",
+      "generosidade",
+      "respeito",
+      "gentileza"
+    ]
   },
   {
-    id: "compaixao",
-    termos: ["compaixão", "piedade", "misericórdia", "solidariedade afetiva"],
-    frases: [
+    "id": "compaixao",
+    "termos": [
+      "compaixão",
+      "piedade",
+      "misericórdia",
+      "solidariedade afetiva"
+    ],
+    "frases": [
       "sofrer junto ao ver o sofrimento alheio",
       "estender a mão mesmo sem ser pedido",
       "não conseguir ficar indiferente à dor do outro",
@@ -988,12 +2058,22 @@ const CONCEPTS = [
       "querer aliviar a dor de quem sofre",
       "abraçar quem está caído"
     ],
-    relacionados: ["empatia", "generosidade", "perdao", "gentileza"]
+    "relacionados": [
+      "empatia",
+      "generosidade",
+      "perdao",
+      "gentileza"
+    ]
   },
   {
-    id: "gentileza",
-    termos: ["gentileza", "delicadeza", "cortesia", "afabilidade"],
-    frases: [
+    "id": "gentileza",
+    "termos": [
+      "gentileza",
+      "delicadeza",
+      "cortesia",
+      "afabilidade"
+    ],
+    "frases": [
       "tratar bem mesmo sem ser obrigado",
       "ceder o lugar sem pensar duas vezes",
       "falar com doçura mesmo num dia difícil",
@@ -1001,12 +2081,22 @@ const CONCEPTS = [
       "abrir a porta e sorrir para um estranho",
       "ter um gesto pequeno que muda o dia de alguém"
     ],
-    relacionados: ["generosidade", "empatia", "respeito", "compaixao"]
+    "relacionados": [
+      "generosidade",
+      "empatia",
+      "respeito",
+      "compaixao"
+    ]
   },
   {
-    id: "admiracao",
-    termos: ["admiração", "reverência", "respeito profundo", "encantamento"],
-    frases: [
+    "id": "admiracao",
+    "termos": [
+      "admiração",
+      "reverência",
+      "respeito profundo",
+      "encantamento"
+    ],
+    "frases": [
       "olhar para alguém como exemplo a seguir",
       "ficar impressionado com a competência do outro",
       "querer ser um pouco como aquela pessoa",
@@ -1014,12 +2104,22 @@ const CONCEPTS = [
       "guardar aquela pessoa como referência",
       "sentir orgulho alheio como se fosse próprio"
     ],
-    relacionados: ["gratidao", "inspiracao", "respeito", "sucesso"]
+    "relacionados": [
+      "gratidao",
+      "inspiracao",
+      "respeito",
+      "sucesso"
+    ]
   },
   {
-    id: "inspiracao",
-    termos: ["inspiração", "estímulo criativo", "chama interior", "faísca"],
-    frases: [
+    "id": "inspiracao",
+    "termos": [
+      "inspiração",
+      "estímulo criativo",
+      "chama interior",
+      "faísca"
+    ],
+    "frases": [
       "sentir a ideia surgir do nada",
       "olhar para alguém e querer fazer mais",
       "sentir vontade de criar depois de ver algo bonito",
@@ -1027,12 +2127,23 @@ const CONCEPTS = [
       "ver um exemplo e pensar 'eu também consigo'",
       "encontrar motivo para começar algo novo"
     ],
-    relacionados: ["criatividade", "admiracao", "motivacao", "sonho", "arte"]
+    "relacionados": [
+      "criatividade",
+      "admiracao",
+      "motivacao",
+      "sonho",
+      "arte"
+    ]
   },
   {
-    id: "motivacao",
-    termos: ["motivação", "estímulo", "ânimo", "impulso"],
-    frases: [
+    "id": "motivacao",
+    "termos": [
+      "motivação",
+      "estímulo",
+      "ânimo",
+      "impulso"
+    ],
+    "frases": [
       "acordar com vontade de vencer o dia",
       "encontrar um motivo para continuar",
       "sentir a energia para começar de novo",
@@ -1040,12 +2151,23 @@ const CONCEPTS = [
       "sentir a vontade de ir além renovada",
       "lembrar por que começou quando bate o cansaço"
     ],
-    relacionados: ["esperanca", "perseveranca", "trabalho", "sonho", "foco"]
+    "relacionados": [
+      "esperanca",
+      "perseveranca",
+      "trabalho",
+      "sonho",
+      "foco"
+    ]
   },
   {
-    id: "preguica",
-    termos: ["preguiça", "indolência", "procrastinação", "moleza"],
-    frases: [
+    "id": "preguica",
+    "termos": [
+      "preguiça",
+      "indolência",
+      "procrastinação",
+      "moleza"
+    ],
+    "frases": [
       "deixar tudo para depois",
       "não ter vontade de sair do lugar",
       "adiar o que precisa ser feito",
@@ -1053,12 +2175,27 @@ const CONCEPTS = [
       "empurrar a tarefa para amanhã de novo",
       "achar qualquer desculpa para não começar"
     ],
-    relacionados: ["tedio", "motivacao", "responsabilidade", "distracao", "cansaco"]
+    "expressoes": [
+      "encher linguiça",
+      "empurrar com a barriga"
+    ],
+    "relacionados": [
+      "tedio",
+      "motivacao",
+      "responsabilidade",
+      "distracao",
+      "cansaco"
+    ]
   },
   {
-    id: "cansaco",
-    termos: ["cansaço", "exaustão", "fadiga", "esgotamento"],
-    frases: [
+    "id": "cansaco",
+    "termos": [
+      "cansaço",
+      "exaustão",
+      "fadiga",
+      "esgotamento"
+    ],
+    "frases": [
       "não ter mais energia para nada",
       "sentir o corpo pedindo descanso",
       "chegar no fim do dia sem forças",
@@ -1066,12 +2203,22 @@ const CONCEPTS = [
       "arrastar-se até o fim da tarefa",
       "sentir o peso do dia nas costas"
     ],
-    relacionados: ["estresse", "preguica", "alivio", "rotina"]
+    "relacionados": [
+      "estresse",
+      "preguica",
+      "alivio",
+      "rotina"
+    ]
   },
   {
-    id: "estresse",
-    termos: ["estresse", "tensão", "sobrecarga", "pressão"],
-    frases: [
+    "id": "estresse",
+    "termos": [
+      "estresse",
+      "tensão",
+      "sobrecarga",
+      "pressão"
+    ],
+    "frases": [
       "sentir que tudo acontece ao mesmo tempo",
       "não dar conta de tantas cobranças",
       "viver no limite entre uma tarefa e outra",
@@ -1079,12 +2226,27 @@ const CONCEPTS = [
       "explodir por qualquer coisinha de tão sobrecarregado",
       "sentir que falta hora no dia"
     ],
-    relacionados: ["ansiedade", "cansaco", "urgencia", "controle", "alivio"]
+    "expressoes": [
+      "estar com a corda no pescoço",
+      "estar no limite"
+    ],
+    "relacionados": [
+      "ansiedade",
+      "cansaco",
+      "urgencia",
+      "controle",
+      "alivio"
+    ]
   },
   {
-    id: "alivio",
-    termos: ["alívio", "descanso", "desafogo", "respiro"],
-    frases: [
+    "id": "alivio",
+    "termos": [
+      "alívio",
+      "descanso",
+      "desafogo",
+      "respiro"
+    ],
+    "frases": [
       "sentir um peso sair das costas",
       "finalmente poder respirar fundo",
       "relaxar depois de tanta tensão",
@@ -1092,12 +2254,22 @@ const CONCEPTS = [
       "soltar o ar que nem sabia que estava prendendo",
       "sentir o corpo relaxar de uma vez"
     ],
-    relacionados: ["calma", "felicidade", "gratidao", "cansaco"]
+    "relacionados": [
+      "calma",
+      "felicidade",
+      "gratidao",
+      "cansaco"
+    ]
   },
   {
-    id: "frustracao",
-    termos: ["frustração", "decepção", "contrariedade", "desapontamento"],
-    frases: [
+    "id": "frustracao",
+    "termos": [
+      "frustração",
+      "decepção",
+      "contrariedade",
+      "desapontamento"
+    ],
+    "frases": [
       "esperar uma coisa e receber outra bem diferente",
       "não conseguir o que tanto queria",
       "sentir que o esforço não valeu a pena",
@@ -1105,12 +2277,26 @@ const CONCEPTS = [
       "sentir a vontade de desistir de tudo",
       "engolir em seco quando o plano não dá certo"
     ],
-    relacionados: ["raiva", "tristeza", "fracasso", "arrependimento"]
+    "expressoes": [
+      "chutar o balde",
+      "levar um balde de água fria"
+    ],
+    "relacionados": [
+      "raiva",
+      "tristeza",
+      "fracasso",
+      "arrependimento"
+    ]
   },
   {
-    id: "superacao",
-    termos: ["superação", "resiliência", "virada por cima", "vitória sobre a adversidade"],
-    frases: [
+    "id": "superacao",
+    "termos": [
+      "superação",
+      "resiliência",
+      "virada por cima",
+      "vitória sobre a adversidade"
+    ],
+    "frases": [
       "transformar a dor em força",
       "sair mais forte depois da queda",
       "virar o jogo quando tudo parecia perdido",
@@ -1118,12 +2304,27 @@ const CONCEPTS = [
       "levantar poeira e seguir mesmo machucado",
       "fazer da dificuldade um degrau"
     ],
-    relacionados: ["coragem", "perseveranca", "sucesso", "crescimento", "recomeco"]
+    "ditados": [
+      "Água mole em pedra dura, tanto bate até que fura.",
+      "Depois da tempestade vem a bonança."
+    ],
+    "relacionados": [
+      "coragem",
+      "perseveranca",
+      "sucesso",
+      "crescimento",
+      "recomeco"
+    ]
   },
   {
-    id: "crescimento",
-    termos: ["crescimento", "evolução pessoal", "amadurecimento", "desenvolvimento"],
-    frases: [
+    "id": "crescimento",
+    "termos": [
+      "crescimento",
+      "evolução pessoal",
+      "amadurecimento",
+      "desenvolvimento"
+    ],
+    "frases": [
       "ser hoje melhor do que era ontem",
       "aprender algo novo sobre si mesmo",
       "sair da própria zona de conforto para evoluir",
@@ -1131,12 +2332,29 @@ const CONCEPTS = [
       "encarar os erros como degraus para melhorar",
       "amadurecer depois de uma boa dor de cabeça"
     ],
-    relacionados: ["sabedoria", "mudanca", "superacao", "conhecimento", "vida"]
+    "ditados": [
+      "A experiência é a melhor mestra."
+    ],
+    "expressoes": [
+      "aprender na marra",
+      "tirar uma lição"
+    ],
+    "relacionados": [
+      "sabedoria",
+      "mudanca",
+      "superacao",
+      "conhecimento",
+      "vida"
+    ]
   },
   {
-    id: "limite",
-    termos: ["limite", "fronteira pessoal", "linha vermelha"],
-    frases: [
+    "id": "limite",
+    "termos": [
+      "limite",
+      "fronteira pessoal",
+      "linha vermelha"
+    ],
+    "frases": [
       "saber até onde pode ir",
       "dizer não sem sentir culpa",
       "não deixar passarem por cima de você",
@@ -1144,12 +2362,22 @@ const CONCEPTS = [
       "proteger o próprio espaço",
       "traçar uma linha que ninguém deve cruzar"
     ],
-    relacionados: ["respeito", "responsabilidade", "controle", "liberdade"]
+    "relacionados": [
+      "respeito",
+      "responsabilidade",
+      "controle",
+      "liberdade"
+    ]
   },
   {
-    id: "foco",
-    termos: ["foco", "concentração", "atenção plena", "empenho direcionado"],
-    frases: [
+    "id": "foco",
+    "termos": [
+      "foco",
+      "concentração",
+      "atenção plena",
+      "empenho direcionado"
+    ],
+    "frases": [
       "não desviar o olhar do objetivo",
       "bloquear tudo que distrai para terminar a tarefa",
       "mergulhar de cabeça no que precisa ser feito",
@@ -1157,12 +2385,23 @@ const CONCEPTS = [
       "manter o alvo sempre em vista",
       "não perder o fio da meada"
     ],
-    relacionados: ["motivacao", "disciplina", "organizacao", "distracao", "controle"]
+    "relacionados": [
+      "motivacao",
+      "disciplina",
+      "organizacao",
+      "distracao",
+      "controle"
+    ]
   },
   {
-    id: "distracao",
-    termos: ["distração", "dispersão", "desatenção", "devaneio"],
-    frases: [
+    "id": "distracao",
+    "termos": [
+      "distração",
+      "dispersão",
+      "desatenção",
+      "devaneio"
+    ],
+    "frases": [
       "perder o fio da meada no meio da tarefa",
       "olhar o celular a cada dois minutos",
       "viajar no pensamento no meio da conversa",
@@ -1170,12 +2409,22 @@ const CONCEPTS = [
       "deixar a mente vagar para longe do assunto",
       "não conseguir manter o foco em nada"
     ],
-    relacionados: ["foco", "preguica", "criatividade", "caos"]
+    "relacionados": [
+      "foco",
+      "preguica",
+      "criatividade",
+      "caos"
+    ]
   },
   {
-    id: "organizacao",
-    termos: ["organização", "ordem", "método", "planejamento prático"],
-    frases: [
+    "id": "organizacao",
+    "termos": [
+      "organização",
+      "ordem",
+      "método",
+      "planejamento prático"
+    ],
+    "frases": [
       "ter um lugar para cada coisa",
       "planejar antes de sair fazendo",
       "colocar a casa em ordem",
@@ -1183,12 +2432,23 @@ const CONCEPTS = [
       "não deixar nada acumular para depois",
       "arrumar tudo antes que vire bagunça"
     ],
-    relacionados: ["responsabilidade", "foco", "planejamento", "caos", "controle"]
+    "relacionados": [
+      "responsabilidade",
+      "foco",
+      "planejamento",
+      "caos",
+      "controle"
+    ]
   },
   {
-    id: "planejamento",
-    termos: ["planejamento", "estratégia", "preparação", "antecipação"],
-    frases: [
+    "id": "planejamento",
+    "termos": [
+      "planejamento",
+      "estratégia",
+      "preparação",
+      "antecipação"
+    ],
+    "frases": [
       "pensar em cada passo antes de agir",
       "traçar um plano antes de sair do lugar",
       "prever os obstáculos antes que apareçam",
@@ -1196,12 +2456,25 @@ const CONCEPTS = [
       "não deixar nada ao acaso",
       "montar o roteiro antes da viagem"
     ],
-    relacionados: ["organizacao", "decisao", "foco", "responsabilidade"]
+    "ditados": [
+      "Antes prevenir do que remediar."
+    ],
+    "relacionados": [
+      "organizacao",
+      "decisao",
+      "foco",
+      "responsabilidade"
+    ]
   },
   {
-    id: "caos",
-    termos: ["caos", "bagunça", "desordem", "confusão"],
-    frases: [
+    "id": "caos",
+    "termos": [
+      "caos",
+      "bagunça",
+      "desordem",
+      "confusão"
+    ],
+    "frases": [
       "tudo acontecendo ao mesmo tempo e fora de ordem",
       "não achar mais nada no meio da bagunça",
       "sentir que a casa (ou a vida) virou de cabeça para baixo",
@@ -1209,12 +2482,26 @@ const CONCEPTS = [
       "não saber por onde começar a arrumar",
       "viver apagando incêndio o dia inteiro"
     ],
-    relacionados: ["organizacao", "estresse", "urgencia", "distracao"]
+    "expressoes": [
+      "virar de cabeça para baixo",
+      "ser um Deus nos acuda"
+    ],
+    "relacionados": [
+      "organizacao",
+      "estresse",
+      "urgencia",
+      "distracao"
+    ]
   },
   {
-    id: "urgencia",
-    termos: ["urgência", "pressa", "emergência", "imediatismo"],
-    frases: [
+    "id": "urgencia",
+    "termos": [
+      "urgência",
+      "pressa",
+      "emergência",
+      "imediatismo"
+    ],
+    "frases": [
       "não poder esperar nem mais um minuto",
       "correr contra o tempo",
       "resolver agora ou vai ser tarde demais",
@@ -1222,12 +2509,28 @@ const CONCEPTS = [
       "deixar tudo de lado para apagar aquele incêndio",
       "não ter tempo a perder"
     ],
-    relacionados: ["tempo", "estresse", "caos", "decisao"]
+    "ditados": [
+      "A pressa é inimiga da perfeição."
+    ],
+    "expressoes": [
+      "apagar um incêndio"
+    ],
+    "relacionados": [
+      "tempo",
+      "estresse",
+      "caos",
+      "decisao"
+    ]
   },
   {
-    id: "rotina",
-    termos: ["rotina", "cotidiano", "hábito diário", "costume"],
-    frases: [
+    "id": "rotina",
+    "termos": [
+      "rotina",
+      "cotidiano",
+      "hábito diário",
+      "costume"
+    ],
+    "frases": [
       "fazer sempre a mesma coisa no mesmo horário",
       "seguir o roteiro de todo santo dia",
       "acordar, trabalhar, dormir, repetir",
@@ -1235,12 +2538,26 @@ const CONCEPTS = [
       "sentir que os dias se repetem sem parar",
       "ter aquele ritual que nunca falha"
     ],
-    relacionados: ["tedio", "organizacao", "disciplina", "tempo"]
+    "ditados": [
+      "Em time que está ganhando não se mexe."
+    ],
+    "relacionados": [
+      "tedio",
+      "organizacao",
+      "disciplina",
+      "tempo"
+    ]
   },
   {
-    id: "trabalho",
-    termos: ["trabalho", "emprego", "labuta", "ofício", "profissão"],
-    frases: [
+    "id": "trabalho",
+    "termos": [
+      "trabalho",
+      "emprego",
+      "labuta",
+      "ofício",
+      "profissão"
+    ],
+    "frases": [
       "ganhar o pão de cada dia",
       "dar duro para conquistar algo",
       "vestir a camisa da empresa",
@@ -1248,12 +2565,28 @@ const CONCEPTS = [
       "bater meta depois de virar noites",
       "levantar cedo para não perder o horário"
     ],
-    relacionados: ["dinheiro", "sucesso", "responsabilidade", "criatividade", "motivacao", "rotina"]
+    "ditados": [
+      "Deus ajuda quem cedo madruga.",
+      "Devagar se vai ao longe."
+    ],
+    "relacionados": [
+      "dinheiro",
+      "sucesso",
+      "responsabilidade",
+      "criatividade",
+      "motivacao",
+      "rotina"
+    ]
   },
   {
-    id: "criatividade",
-    termos: ["criatividade", "inventividade", "imaginação", "originalidade"],
-    frases: [
+    "id": "criatividade",
+    "termos": [
+      "criatividade",
+      "inventividade",
+      "imaginação",
+      "originalidade"
+    ],
+    "frases": [
       "pensar fora da caixa",
       "encontrar soluções onde ninguém via",
       "transformar ideias em algo novo",
@@ -1261,12 +2594,30 @@ const CONCEPTS = [
       "juntar duas coisas que ninguém tinha juntado antes",
       "improvisar uma solução na hora"
     ],
-    relacionados: ["conhecimento", "sonho", "trabalho", "liberdade", "arte", "inspiracao"]
+    "ditados": [
+      "A necessidade faz o sábio."
+    ],
+    "expressoes": [
+      "matar dois coelhos com uma cajadada só",
+      "dar um jeitinho"
+    ],
+    "relacionados": [
+      "conhecimento",
+      "sonho",
+      "trabalho",
+      "liberdade",
+      "arte",
+      "inspiracao"
+    ]
   },
   {
-    id: "arte",
-    termos: ["arte", "expressão artística", "criação estética"],
-    frases: [
+    "id": "arte",
+    "termos": [
+      "arte",
+      "expressão artística",
+      "criação estética"
+    ],
+    "frases": [
       "colocar num quadro o que as palavras não dizem",
       "transformar a dor em algo bonito de se ver",
       "encontrar beleza onde ninguém procurou",
@@ -1274,12 +2625,22 @@ const CONCEPTS = [
       "criar algo que emociona quem vê",
       "dar forma ao que só existia na imaginação"
     ],
-    relacionados: ["criatividade", "beleza", "inspiracao", "musica"]
+    "relacionados": [
+      "criatividade",
+      "beleza",
+      "inspiracao",
+      "musica"
+    ]
   },
   {
-    id: "musica",
-    termos: ["música", "melodia", "canção", "ritmo"],
-    frases: [
+    "id": "musica",
+    "termos": [
+      "música",
+      "melodia",
+      "canção",
+      "ritmo"
+    ],
+    "frases": [
       "sentir a letra descrever exatamente o que sente",
       "cantar no chuveiro como se ninguém estivesse ouvindo",
       "lembrar de alguém só de ouvir uma canção",
@@ -1287,12 +2648,22 @@ const CONCEPTS = [
       "arrepiar com aquele refrão certo na hora certa",
       "sentir a batida tomar conta do corpo"
     ],
-    relacionados: ["arte", "felicidade", "saudade", "diversao"]
+    "relacionados": [
+      "arte",
+      "felicidade",
+      "saudade",
+      "diversao"
+    ]
   },
   {
-    id: "silencio",
-    termos: ["silêncio", "quietude", "mudez", "ausência de som"],
-    frases: [
+    "id": "silencio",
+    "termos": [
+      "silêncio",
+      "quietude",
+      "mudez",
+      "ausência de som"
+    ],
+    "frases": [
       "ouvir só o próprio pensamento",
       "ficar quieto sem precisar preencher o vazio",
       "sentir a paz de um ambiente sem barulho",
@@ -1300,12 +2671,22 @@ const CONCEPTS = [
       "escutar o vento entre as árvores",
       "ficar em paz sem precisar dizer nada"
     ],
-    relacionados: ["calma", "solidao", "natureza", "espiritualidade"]
+    "relacionados": [
+      "calma",
+      "solidao",
+      "natureza",
+      "espiritualidade"
+    ]
   },
   {
-    id: "natureza",
-    termos: ["natureza", "meio ambiente", "mundo natural", "paisagem"],
-    frases: [
+    "id": "natureza",
+    "termos": [
+      "natureza",
+      "meio ambiente",
+      "mundo natural",
+      "paisagem"
+    ],
+    "frases": [
       "o silêncio de uma trilha na mata",
       "o som do mar acalmando a mente",
       "sentir o vento no rosto",
@@ -1313,12 +2694,24 @@ const CONCEPTS = [
       "ver o sol nascer atrás das montanhas",
       "sentir os pés na areia molhada"
     ],
-    relacionados: ["calma", "vida", "liberdade", "tempo", "silencio", "viagem"]
+    "relacionados": [
+      "calma",
+      "vida",
+      "liberdade",
+      "tempo",
+      "silencio",
+      "viagem"
+    ]
   },
   {
-    id: "viagem",
-    termos: ["viagem", "jornada", "aventura", "deslocamento"],
-    frases: [
+    "id": "viagem",
+    "termos": [
+      "viagem",
+      "jornada",
+      "aventura",
+      "deslocamento"
+    ],
+    "frases": [
       "fazer as malas para um lugar novo",
       "descobrir um cantinho do mundo que não conhecia",
       "sentir o gostinho de liberdade na estrada",
@@ -1326,12 +2719,22 @@ const CONCEPTS = [
       "voltar diferente do que era antes de partir",
       "perder-se de propósito só para descobrir"
     ],
-    relacionados: ["liberdade", "curiosidade", "natureza", "recomeco"]
+    "relacionados": [
+      "liberdade",
+      "curiosidade",
+      "natureza",
+      "recomeco"
+    ]
   },
   {
-    id: "beleza",
-    termos: ["beleza", "estética", "encanto", "formosura"],
-    frases: [
+    "id": "beleza",
+    "termos": [
+      "beleza",
+      "estética",
+      "encanto",
+      "formosura"
+    ],
+    "frases": [
       "algo que prende o olhar sem explicação",
       "ver graça até no mais simples",
       "sentir-se tocado pela harmonia das formas",
@@ -1339,12 +2742,26 @@ const CONCEPTS = [
       "encontrar charme no que os outros nem reparam",
       "sentir que aquilo merece ser fotografado"
     ],
-    relacionados: ["arte", "natureza", "vaidade", "admiracao"]
+    "ditados": [
+      "Nem tudo que reluz é ouro.",
+      "As aparências enganam."
+    ],
+    "relacionados": [
+      "arte",
+      "natureza",
+      "vaidade",
+      "admiracao"
+    ]
   },
   {
-    id: "saude",
-    termos: ["saúde", "bem-estar físico", "vitalidade", "disposição"],
-    frases: [
+    "id": "saude",
+    "termos": [
+      "saúde",
+      "bem-estar físico",
+      "vitalidade",
+      "disposição"
+    ],
+    "frases": [
       "acordar disposto para o dia",
       "sentir o corpo respondendo bem",
       "cuidar de si para viver mais e melhor",
@@ -1352,12 +2769,25 @@ const CONCEPTS = [
       "sentir energia para fazer o que gosta",
       "dormir bem e acordar renovado"
     ],
-    relacionados: ["vida", "calma", "disciplina", "cansaco"]
+    "ditados": [
+      "Antes prevenir do que remediar."
+    ],
+    "relacionados": [
+      "vida",
+      "calma",
+      "disciplina",
+      "cansaco"
+    ]
   },
   {
-    id: "juventude",
-    termos: ["juventude", "mocidade", "vigor jovem", "energia da idade nova"],
-    frases: [
+    "id": "juventude",
+    "termos": [
+      "juventude",
+      "mocidade",
+      "vigor jovem",
+      "energia da idade nova"
+    ],
+    "frases": [
       "sentir que o mundo inteiro está pela frente",
       "ter energia de sobra para tudo",
       "viver como se nada fosse dar errado",
@@ -1365,12 +2795,22 @@ const CONCEPTS = [
       "sentir a vida ainda toda por descobrir",
       "acreditar que dá tempo para tudo"
     ],
-    relacionados: ["vida", "sonho", "liberdade", "velhice"]
+    "relacionados": [
+      "vida",
+      "sonho",
+      "liberdade",
+      "velhice"
+    ]
   },
   {
-    id: "velhice",
-    termos: ["velhice", "terceira idade", "maturidade avançada", "envelhecimento"],
-    frases: [
+    "id": "velhice",
+    "termos": [
+      "velhice",
+      "terceira idade",
+      "maturidade avançada",
+      "envelhecimento"
+    ],
+    "frases": [
       "olhar para trás com a bagagem de uma vida inteira",
       "contar histórias de um tempo que já passou",
       "sentir o corpo pedir mais calma",
@@ -1378,12 +2818,21 @@ const CONCEPTS = [
       "guardar sabedoria em cada ruga",
       "viver no ritmo que o corpo agora pede"
     ],
-    relacionados: ["sabedoria", "tempo", "saudade", "juventude"]
+    "relacionados": [
+      "sabedoria",
+      "tempo",
+      "saudade",
+      "juventude"
+    ]
   },
   {
-    id: "infancia",
-    termos: ["infância", "meninice", "puerícia"],
-    frases: [
+    "id": "infancia",
+    "termos": [
+      "infância",
+      "meninice",
+      "puerícia"
+    ],
+    "frases": [
       "brincar sem se preocupar com mais nada",
       "acreditar em coisas simples de coração aberto",
       "correr descalço no quintal até escurecer",
@@ -1391,12 +2840,22 @@ const CONCEPTS = [
       "não ter noção do tamanho dos problemas do mundo",
       "guardar aquele gosto de infância em uma lembrança"
     ],
-    relacionados: ["saudade", "familia", "diversao", "curiosidade"]
+    "relacionados": [
+      "saudade",
+      "familia",
+      "diversao",
+      "curiosidade"
+    ]
   },
   {
-    id: "diversao",
-    termos: ["diversão", "entretenimento", "distração boa", "lazer"],
-    frases: [
+    "id": "diversao",
+    "termos": [
+      "diversão",
+      "entretenimento",
+      "distração boa",
+      "lazer"
+    ],
+    "frases": [
       "rir até doer a barriga",
       "esquecer os problemas por um tempo curtindo algo gostoso",
       "aproveitar o momento sem se preocupar com mais nada",
@@ -1404,12 +2863,22 @@ const CONCEPTS = [
       "curtir a companhia de quem gosta",
       "perder a noção do tempo se divertindo"
     ],
-    relacionados: ["euforia", "humor", "amizade", "musica"]
+    "relacionados": [
+      "euforia",
+      "humor",
+      "amizade",
+      "musica"
+    ]
   },
   {
-    id: "humor",
-    termos: ["humor", "comédia", "graça", "riso"],
-    frases: [
+    "id": "humor",
+    "termos": [
+      "humor",
+      "comédia",
+      "graça",
+      "riso"
+    ],
+    "frases": [
       "rir de si mesmo antes de rir dos outros",
       "encontrar graça até nos perrengues",
       "contar uma piada na hora certa para aliviar o clima",
@@ -1417,12 +2886,25 @@ const CONCEPTS = [
       "achar engraçado até quando não devia",
       "usar o riso para atravessar um dia difícil"
     ],
-    relacionados: ["diversao", "alivio", "criatividade", "felicidade"]
+    "ditados": [
+      "Rir é o melhor remédio."
+    ],
+    "relacionados": [
+      "diversao",
+      "alivio",
+      "criatividade",
+      "felicidade"
+    ]
   },
   {
-    id: "competicao",
-    termos: ["competição", "disputa", "rivalidade", "concorrência"],
-    frases: [
+    "id": "competicao",
+    "termos": [
+      "competição",
+      "disputa",
+      "rivalidade",
+      "concorrência"
+    ],
+    "frases": [
       "querer vencer a qualquer custo",
       "medir forças com o adversário",
       "não aceitar ficar em segundo lugar",
@@ -1430,12 +2912,22 @@ const CONCEPTS = [
       "sentir a adrenalina da disputa",
       "jogar para ganhar, não só para participar"
     ],
-    relacionados: ["ganancia", "sucesso", "orgulho", "inveja"]
+    "relacionados": [
+      "ganancia",
+      "sucesso",
+      "orgulho",
+      "inveja"
+    ]
   },
   {
-    id: "disciplina",
-    termos: ["disciplina", "autodisciplina", "rigor pessoal", "constância"],
-    frases: [
+    "id": "disciplina",
+    "termos": [
+      "disciplina",
+      "autodisciplina",
+      "rigor pessoal",
+      "constância"
+    ],
+    "frases": [
       "fazer o que precisa ser feito mesmo sem vontade",
       "manter a rotina mesmo quando ninguém está cobrando",
       "não pular o treino mesmo cansado",
@@ -1443,12 +2935,23 @@ const CONCEPTS = [
       "repetir o hábito até virar automático",
       "escolher o difícil hoje para colher fácil amanhã"
     ],
-    relacionados: ["foco", "responsabilidade", "perseveranca", "rotina", "controle"]
+    "relacionados": [
+      "foco",
+      "responsabilidade",
+      "perseveranca",
+      "rotina",
+      "controle"
+    ]
   },
   {
-    id: "fe",
-    termos: ["fé", "crença", "devoção espiritual", "convicção religiosa"],
-    frases: [
+    "id": "fe",
+    "termos": [
+      "fé",
+      "crença",
+      "devoção espiritual",
+      "convicção religiosa"
+    ],
+    "frases": [
       "acreditar em algo maior que não se pode ver",
       "confiar que existe um propósito por trás de tudo",
       "rezar pedindo forças para seguir",
@@ -1456,12 +2959,26 @@ const CONCEPTS = [
       "confiar mesmo sem entender o motivo",
       "entregar aquilo que não está mais nas próprias mãos"
     ],
-    relacionados: ["esperanca", "espiritualidade", "destino", "gratidao"]
+    "ditados": [
+      "Deus escreve certo por linhas tortas.",
+      "Deus ajuda quem cedo madruga."
+    ],
+    "relacionados": [
+      "esperanca",
+      "espiritualidade",
+      "destino",
+      "gratidao"
+    ]
   },
   {
-    id: "espiritualidade",
-    termos: ["espiritualidade", "vida interior", "conexão espiritual", "transcendência"],
-    frases: [
+    "id": "espiritualidade",
+    "termos": [
+      "espiritualidade",
+      "vida interior",
+      "conexão espiritual",
+      "transcendência"
+    ],
+    "frases": [
       "buscar um sentido maior para a existência",
       "sentir-se conectado com algo além do visível",
       "meditar em busca de paz interior",
@@ -1469,12 +2986,21 @@ const CONCEPTS = [
       "olhar para dentro em busca de respostas",
       "encontrar quietude num momento de oração ou silêncio"
     ],
-    relacionados: ["fe", "silencio", "calma", "sabedoria"]
+    "relacionados": [
+      "fe",
+      "silencio",
+      "calma",
+      "sabedoria"
+    ]
   },
   {
-    id: "solidariedade",
-    termos: ["solidariedade", "cooperação", "ajuda mútua"],
-    frases: [
+    "id": "solidariedade",
+    "termos": [
+      "solidariedade",
+      "cooperação",
+      "ajuda mútua"
+    ],
+    "frases": [
       "estender a mão a quem precisa",
       "sentir a dor do outro como se fosse sua",
       "ajudar sem esperar nada em troca",
@@ -1482,7 +3008,20 @@ const CONCEPTS = [
       "doar o que puder para quem tem menos",
       "juntar-se a outros para carregar um peso maior"
     ],
-    relacionados: ["generosidade", "igualdade", "amizade", "respeito", "empatia"]
+    "ditados": [
+      "A união faz a força."
+    ],
+    "expressoes": [
+      "quebrar um galho",
+      "dar uma força"
+    ],
+    "relacionados": [
+      "generosidade",
+      "igualdade",
+      "amizade",
+      "respeito",
+      "empatia"
+    ]
   }
 ];
 

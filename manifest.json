@@ -1,7 +1,7 @@
 {
   "name": "Dicionário de Ideias Afins",
   "short_name": "Ideias Afins",
-  "description": "Digite uma palavra ou frase e descubra ideias, sinônimos e expressões relacionadas.",
+  "description": "Digite uma palavra ou frase e descubra ideias, sinônimos, ditados e expressões populares relacionadas.",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",

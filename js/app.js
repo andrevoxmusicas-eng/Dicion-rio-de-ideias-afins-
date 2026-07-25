@@ -38,17 +38,20 @@ function levenshtein(a, b) {
   return dp[n];
 }
 
-// Pré-processa cada conceito com termos e frases normalizados, para acelerar a busca.
+// Pré-processa cada conceito com termos, frases, ditados e expressões normalizados,
+// para acelerar a busca. Ditados e expressões contam como "textos" de apoio, assim
+// como as frases: enriquecem a busca sem cada um precisar de sua própria lógica.
 const INDEX = CONCEPTS.map(c => {
-  const frasesNorm = (c.frases || []).map(normalize);
-  const frasesWordSet = new Set(
-    frasesNorm.flatMap(f => f.split(" ")).filter(w => w.length >= 3 && !STOPWORDS.has(w))
+  const textos = [...(c.frases || []), ...(c.ditados || []), ...(c.expressoes || [])];
+  const textosNorm = textos.map(normalize);
+  const textosWordSet = new Set(
+    textosNorm.flatMap(f => f.split(" ")).filter(w => w.length >= 3 && !STOPWORDS.has(w))
   );
   return {
     ...c,
     termosNorm: c.termos.map(normalize),
-    frasesNorm,
-    frasesWordSet
+    textosNorm,
+    textosWordSet
   };
 });
 const CONCEPT_BY_ID = new Map(INDEX.map(c => [c.id, c]));
@@ -66,8 +69,8 @@ function scoreConcept(concept, rawQueryNorm, queryWords) {
   }
 
   if (rawQueryNorm.length >= 6) {
-    for (const frase of concept.frasesNorm) {
-      if (frase.includes(rawQueryNorm) || rawQueryNorm.includes(frase)) {
+    for (const texto of concept.textosNorm) {
+      if (texto.includes(rawQueryNorm) || rawQueryNorm.includes(texto)) {
         score += 60;
       }
     }
@@ -90,11 +93,11 @@ function scoreConcept(concept, rawQueryNorm, queryWords) {
     }
 
     if (word.length >= 3) {
-      if (concept.frasesWordSet.has(word)) {
+      if (concept.textosWordSet.has(word)) {
         score += 4;
       } else {
-        for (const frWord of concept.frasesWordSet) {
-          if (word.length >= 4 && (frWord.startsWith(word) || word.startsWith(frWord))) {
+        for (const txWord of concept.textosWordSet) {
+          if (word.length >= 4 && (txWord.startsWith(word) || word.startsWith(txWord))) {
             score += 2;
             break;
           }
@@ -283,7 +286,7 @@ function renderConceptCard(concept, isPrimary) {
   if (concept.frases && concept.frases.length) {
     const phrasesLabel = document.createElement("h3");
     phrasesLabel.className = "section-label";
-    phrasesLabel.textContent = "Frases e expressões afins";
+    phrasesLabel.textContent = "Frases afins";
     card.appendChild(phrasesLabel);
 
     const list = document.createElement("ul");
@@ -294,6 +297,38 @@ function renderConceptCard(concept, isPrimary) {
       list.appendChild(li);
     });
     card.appendChild(list);
+  }
+
+  // Ditados populares
+  if (concept.ditados && concept.ditados.length) {
+    const ditadosLabel = document.createElement("h3");
+    ditadosLabel.className = "section-label";
+    ditadosLabel.textContent = "Ditados populares";
+    card.appendChild(ditadosLabel);
+
+    const list = document.createElement("ul");
+    list.className = "phrase-list phrase-list--ditados";
+    concept.ditados.forEach(d => {
+      const li = document.createElement("li");
+      li.textContent = d;
+      list.appendChild(li);
+    });
+    card.appendChild(list);
+  }
+
+  // Expressões populares
+  if (concept.expressoes && concept.expressoes.length) {
+    const expLabel = document.createElement("h3");
+    expLabel.className = "section-label";
+    expLabel.textContent = "Expressões populares";
+    card.appendChild(expLabel);
+
+    const expChips = document.createElement("div");
+    expChips.className = "chips";
+    concept.expressoes.forEach(exp => {
+      expChips.appendChild(chip(exp, () => runSearch(exp), "expressao"));
+    });
+    card.appendChild(expChips);
   }
 
   // Ideias afins (relacionados)
