@@ -71,6 +71,23 @@ body {
   margin-bottom: 32px;
 }
 
+.logo {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px;
+  display: block;
+}
+
+.logo-lines {
+  color: var(--accent-soft);
+}
+
+.logo-hub {
+  fill: var(--card-bg);
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
 .hero h1 {
   font-size: 2.1rem;
   margin: 0 0 8px;
