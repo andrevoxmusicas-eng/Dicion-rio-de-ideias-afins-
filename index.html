@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dicionário de Ideias Afins</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <h1>Dicionário de Ideias Afins</h1>
+      <p class="subtitle">Digite uma palavra ou frase e descubra ideias, sinônimos e expressões relacionadas.</p>
+    </header>
+
+    <form id="searchForm" class="search-bar" autocomplete="off">
+      <input
+        type="text"
+        id="query"
+        name="query"
+        placeholder="Ex: saudade, medo de recomeçar, sentir o peito apertar..."
+        aria-label="Busque uma palavra ou frase"
+      />
+      <button type="submit" class="btn btn--primary">Buscar</button>
+      <button type="button" id="randomBtn" class="btn btn--ghost" title="Explorar uma ideia aleatória">
+        Surpreenda-me
+      </button>
+    </form>
+
+    <div id="trail" class="trail hidden" aria-label="Ideias visitadas"></div>
+
+    <main id="results" class="results"></main>
+
+    <p id="emptyState" class="empty-state">
+      Comece digitando uma palavra (como <em>"coragem"</em>) ou uma frase (como
+      <em>"sentir o coração acelerado"</em>) para encontrar ideias afins.
+    </p>
+
+    <footer class="footer">
+      <p>Dicionário de Ideias Afins — encontre a palavra certa para o que você quer dizer.</p>
+    </footer>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
