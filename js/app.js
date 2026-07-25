@@ -1,4 +1,4 @@
-// Dicionário de Ideias Afins — lógica de busca e renderização
+// Nexo Popular — lógica de busca e renderização
 
 const STOPWORDS = new Set([
   "a","o","as","os","de","da","do","das","dos","um","uma","uns","umas",
@@ -38,11 +38,14 @@ function levenshtein(a, b) {
   return dp[n];
 }
 
-// Pré-processa cada conceito com termos, frases, ditados e expressões normalizados,
-// para acelerar a busca. Ditados e expressões contam como "textos" de apoio, assim
-// como as frases: enriquecem a busca sem cada um precisar de sua própria lógica.
+// Pré-processa cada conceito com termos, gírias, frases, ditados, expressões e
+// trocadilhos normalizados, para acelerar a busca. Gírias contam como sinônimos
+// (palavras curtas equivalentes ao termo); ditados, expressões e trocadilhos
+// contam como "textos" de apoio, assim como as frases — todos enriquecem a busca
+// sem cada categoria precisar de sua própria lógica de pontuação.
 const INDEX = CONCEPTS.map(c => {
-  const textos = [...(c.frases || []), ...(c.ditados || []), ...(c.expressoes || [])];
+  const sinonimosNorm = [...c.termos, ...(c.girias || [])].map(normalize);
+  const textos = [...(c.frases || []), ...(c.ditados || []), ...(c.expressoes || []), ...(c.trocadilhos || [])];
   const textosNorm = textos.map(normalize);
   const textosWordSet = new Set(
     textosNorm.flatMap(f => f.split(" ")).filter(w => w.length >= 3 && !STOPWORDS.has(w))
@@ -50,6 +53,7 @@ const INDEX = CONCEPTS.map(c => {
   return {
     ...c,
     termosNorm: c.termos.map(normalize),
+    sinonimosNorm,
     textosNorm,
     textosWordSet
   };
@@ -64,7 +68,7 @@ function conceptTitle(concept) {
 function scoreConcept(concept, rawQueryNorm, queryWords) {
   let score = 0;
 
-  if (concept.termosNorm.includes(rawQueryNorm)) {
+  if (concept.sinonimosNorm.includes(rawQueryNorm)) {
     score += 100;
   }
 
@@ -79,7 +83,7 @@ function scoreConcept(concept, rawQueryNorm, queryWords) {
   for (const word of queryWords) {
     if (word.length < 2) continue;
 
-    for (const termo of concept.termosNorm) {
+    for (const termo of concept.sinonimosNorm) {
       if (termo === word) {
         score += 10;
       } else if (word.length >= 4 && (termo.startsWith(word) || word.startsWith(termo))) {
@@ -282,6 +286,21 @@ function renderConceptCard(concept, isPrimary) {
   });
   card.appendChild(synChips);
 
+  // Gírias
+  if (concept.girias && concept.girias.length) {
+    const giriasLabel = document.createElement("h3");
+    giriasLabel.className = "section-label";
+    giriasLabel.textContent = "Gírias";
+    card.appendChild(giriasLabel);
+
+    const giriasChips = document.createElement("div");
+    giriasChips.className = "chips";
+    concept.girias.forEach(g => {
+      giriasChips.appendChild(chip(g, () => runSearch(g), "giria"));
+    });
+    card.appendChild(giriasChips);
+  }
+
   // Frases
   if (concept.frases && concept.frases.length) {
     const phrasesLabel = document.createElement("h3");
@@ -329,6 +348,23 @@ function renderConceptCard(concept, isPrimary) {
       expChips.appendChild(chip(exp, () => runSearch(exp), "expressao"));
     });
     card.appendChild(expChips);
+  }
+
+  // Trocadilhos
+  if (concept.trocadilhos && concept.trocadilhos.length) {
+    const trocLabel = document.createElement("h3");
+    trocLabel.className = "section-label";
+    trocLabel.textContent = "Trocadilhos";
+    card.appendChild(trocLabel);
+
+    const list = document.createElement("ul");
+    list.className = "phrase-list phrase-list--trocadilhos";
+    concept.trocadilhos.forEach(t => {
+      const li = document.createElement("li");
+      li.textContent = t;
+      list.appendChild(li);
+    });
+    card.appendChild(list);
   }
 
   // Ideias afins (relacionados)

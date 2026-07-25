@@ -16,6 +16,9 @@
   --chip-suggestion-text: #9a3412;
   --chip-expressao-bg: #eef4ff;
   --chip-expressao-text: #1e40af;
+  --chip-giria-bg: #fdf2f8;
+  --chip-giria-text: #9d174d;
+  --troc-accent: #b45309;
   --shadow: 0 10px 30px rgba(76, 29, 149, 0.12);
 }
 
@@ -38,6 +41,9 @@
     --chip-suggestion-text: #fdba74;
     --chip-expressao-bg: #1a2a4a;
     --chip-expressao-text: #93c5fd;
+    --chip-giria-bg: #3a1a2c;
+    --chip-giria-text: #f9a8d4;
+    --troc-accent: #fbbf24;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   }
 }
@@ -235,6 +241,11 @@ body {
   color: var(--chip-expressao-text);
 }
 
+.chip--giria {
+  background: var(--chip-giria-bg);
+  color: var(--chip-giria-text);
+}
+
 .phrase-list {
   margin: 0;
   padding-left: 20px;
@@ -253,6 +264,14 @@ body {
 .phrase-list--ditados li::marker {
   content: "“ ";
   color: var(--accent);
+}
+
+.phrase-list--trocadilhos li {
+  color: var(--troc-accent);
+}
+
+.phrase-list--trocadilhos li::marker {
+  content: "» ";
 }
 
 .no-match {

@@ -1,7 +1,7 @@
 {
-  "name": "Dicionário de Ideias Afins",
-  "short_name": "Ideias Afins",
-  "description": "Digite uma palavra ou frase e descubra ideias, sinônimos, ditados e expressões populares relacionadas.",
+  "name": "Nexo Popular",
+  "short_name": "Nexo Popular",
+  "description": "Digite uma palavra ou frase e descubra ideias, sinônimos, ditados, expressões, gírias e trocadilhos relacionados.",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",

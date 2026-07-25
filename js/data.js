@@ -1,7 +1,7 @@
-// Base de dados do Dicionário de Ideias Afins
+// Base de dados do Nexo Popular
 // Cada entrada representa um "conceito": um conjunto de termos (sinônimos/variações),
-// frases que expressam a ideia, ditados populares e expressões idiomáticas relacionadas,
-// e ids de conceitos relacionados (ideias afins).
+// frases que expressam a ideia, ditados populares, expressões idiomáticas, gírias e
+// trocadilhos relacionados, e ids de conceitos relacionados (ideias afins).
 const CONCEPTS = [
   {
     "id": "felicidade",
@@ -25,6 +25,17 @@ const CONCEPTS = [
     "expressoes": [
       "estar nas nuvens",
       "estar no sétimo céu"
+    ],
+    "girias": [
+      "de boa",
+      "tá tranquilo",
+      "suave",
+      "na paz",
+      "de boa na lagoa",
+      "numa vibe boa"
+    ],
+    "trocadilhos": [
+      "No latim, felicidade é quase sinônimo de sorte — então ser feliz é, no fundo, só ter sorte com frequência."
     ],
     "relacionados": [
       "euforia",
@@ -58,6 +69,16 @@ const CONCEPTS = [
       "estar na fossa",
       "estar por baixo"
     ],
+    "girias": [
+      "tá na fossa",
+      "tá down",
+      "tá mal",
+      "baixo-astral",
+      "tá por baixo"
+    ],
+    "trocadilhos": [
+      "Tô tão triste que até meu Wi-Fi baixou o sinal em solidariedade."
+    ],
     "relacionados": [
       "saudade",
       "solidao",
@@ -90,6 +111,14 @@ const CONCEPTS = [
       "Gato escaldado tem medo de água fria.",
       "Cão que ladra não morde."
     ],
+    "girias": [
+      "treme-treme",
+      "aquele friozinho no estômago",
+      "aquele aperto"
+    ],
+    "trocadilhos": [
+      "Meu medo de altura é tão grande que nem no primeiro andar eu confio direito."
+    ],
     "relacionados": [
       "ansiedade",
       "coragem",
@@ -117,6 +146,12 @@ const CONCEPTS = [
       "explodir por dentro",
       "não engolir aquilo",
       "sair fumaça pelas orelhas"
+    ],
+    "girias": [
+      "tá de bode",
+      "tá pistola",
+      "encheu o saco",
+      "tá se estourando"
     ],
     "relacionados": [
       "odio",
@@ -148,6 +183,12 @@ const CONCEPTS = [
       "dar zebra",
       "cair a ficha"
     ],
+    "girias": [
+      "chocado(a)",
+      "não caiu a ficha",
+      "de cair o queixo",
+      "travei"
+    ],
     "relacionados": [
       "medo",
       "felicidade",
@@ -173,6 +214,11 @@ const CONCEPTS = [
       "afastar-se com repulsa",
       "dar vontade de vomitar",
       "ficar de cabelo em pé de nojo"
+    ],
+    "girias": [
+      "que ranço",
+      "dá um ranço",
+      "enjoativo"
     ],
     "relacionados": [
       "odio",
@@ -201,6 +247,17 @@ const CONCEPTS = [
       "não conseguir tirar do pensamento",
       "sentir o peito quentinho perto da pessoa"
     ],
+    "girias": [
+      "crush",
+      "ficar",
+      "paquera",
+      "affair",
+      "aquele love"
+    ],
+    "trocadilhos": [
+      "Fui na feira comprar um amor-perfeito — voltei só com a flor, o amor mesmo ainda não apareceu.",
+      "Amor é que nem Wi-Fi: ninguém vê, mas todo mundo sente na hora que cai."
+    ],
     "relacionados": [
       "amizade",
       "familia",
@@ -226,6 +283,11 @@ const CONCEPTS = [
       "sentir raiva transformada em rancor",
       "não suportar nem ouvir o nome da pessoa",
       "guardar isso como uma pedra no sapato"
+    ],
+    "girias": [
+      "não vou com a cara",
+      "aquela implicância",
+      "não bate um sino"
     ],
     "relacionados": [
       "raiva",
@@ -257,6 +319,11 @@ const CONCEPTS = [
     "expressoes": [
       "fazer tempestade em copo d'água"
     ],
+    "girias": [
+      "tá aflito(a)",
+      "aquela agonia",
+      "roendo por dentro"
+    ],
     "relacionados": [
       "medo",
       "calma",
@@ -283,6 +350,13 @@ const CONCEPTS = [
       "estar em paz com tudo",
       "deixar a água baixar antes de agir",
       "sentir tudo mais leve por dentro"
+    ],
+    "girias": [
+      "de boa",
+      "suave",
+      "na paz",
+      "tranks",
+      "susse"
     ],
     "relacionados": [
       "paciencia",
@@ -314,6 +388,15 @@ const CONCEPTS = [
       "Deus escreve certo por linhas tortas.",
       "Depois da tempestade vem a bonança."
     ],
+    "girias": [
+      "fé",
+      "confiança",
+      "tamo junto",
+      "vai dar certo"
+    ],
+    "trocadilhos": [
+      "Esperança é só o nome bonito que demos pra 'espera' quando ela insiste em durar demais."
+    ],
     "relacionados": [
       "felicidade",
       "coragem",
@@ -340,6 +423,11 @@ const CONCEPTS = [
       "não saber mais para onde correr",
       "sentir que tudo desmorona ao mesmo tempo"
     ],
+    "girias": [
+      "surtando",
+      "perdendo a cabeça",
+      "explodindo por dentro"
+    ],
     "relacionados": [
       "tristeza",
       "medo",
@@ -365,6 +453,11 @@ const CONCEPTS = [
       "sentir medo de perder o que é seu",
       "vigiar cada passo do outro"
     ],
+    "girias": [
+      "ciumento(a)",
+      "aquele ciuminho",
+      "tá cismado(a)"
+    ],
     "relacionados": [
       "raiva",
       "amor",
@@ -388,6 +481,10 @@ const CONCEPTS = [
       "sentir um aperto ao ver o outro crescer",
       "comparar a própria vida com a dos outros",
       "desejar em silêncio o que não é seu"
+    ],
+    "girias": [
+      "roendo de inveja",
+      "com aquela invejinha"
     ],
     "relacionados": [
       "ciume",
@@ -418,6 +515,11 @@ const CONCEPTS = [
       "morrer de vergonha",
       "querer que a terra o engula"
     ],
+    "girias": [
+      "morrendo de vergonha",
+      "com a cara quente",
+      "mó vexame"
+    ],
     "relacionados": [
       "orgulho",
       "medo",
@@ -442,6 +544,12 @@ const CONCEPTS = [
       "levantar o queixo com dignidade",
       "não admitir estar errado",
       "usar aquilo como troféu"
+    ],
+    "girias": [
+      "se achando",
+      "de cabeça inchada",
+      "no papo",
+      "com a moral lá em cima"
     ],
     "relacionados": [
       "felicidade",
@@ -472,6 +580,12 @@ const CONCEPTS = [
       "Nem tudo que reluz é ouro.",
       "As aparências enganam."
     ],
+    "girias": [
+      "se achando",
+      "cheio de si",
+      "com aquele estilo",
+      "só pose"
+    ],
     "relacionados": [
       "orgulho",
       "beleza",
@@ -498,6 +612,10 @@ const CONCEPTS = [
     "ditados": [
       "Cavalo dado não se olha os dentes."
     ],
+    "girias": [
+      "valeu demais",
+      "de coração mesmo"
+    ],
     "relacionados": [
       "felicidade",
       "amor",
@@ -522,6 +640,14 @@ const CONCEPTS = [
       "olhar fotos antigas e suspirar",
       "sentir um vazio de quem não está mais por perto",
       "voltar num pensamento para um lugar que já não existe mais"
+    ],
+    "girias": [
+      "morrendo de saudade",
+      "aquela saudade doída",
+      "bateu a saudade"
+    ],
+    "trocadilhos": [
+      "Saudade chega que nem notificação: na hora errada, e sempre dói igual."
     ],
     "relacionados": [
       "tristeza",
@@ -552,6 +678,11 @@ const CONCEPTS = [
     "ditados": [
       "Mais vale só do que mal acompanhado."
     ],
+    "girias": [
+      "mó solo",
+      "tá desacompanhado(a)",
+      "sozinho(a) na sua"
+    ],
     "relacionados": [
       "tristeza",
       "desespero",
@@ -576,6 +707,11 @@ const CONCEPTS = [
       "bocejar de puro cansaço mental",
       "rolar a tela sem realmente ver nada",
       "sentir que nada empolga mais"
+    ],
+    "girias": [
+      "mó parada chata",
+      "tá de saco cheio",
+      "mó tédio"
     ],
     "relacionados": [
       "solidao",
@@ -605,6 +741,11 @@ const CONCEPTS = [
     "expressoes": [
       "estar com a corda toda",
       "estar nas nuvens"
+    ],
+    "girias": [
+      "tá ligado no 220",
+      "surtando de tão feliz",
+      "vibrando"
     ],
     "relacionados": [
       "felicidade",
@@ -638,6 +779,14 @@ const CONCEPTS = [
     "expressoes": [
       "encarar o touro à unha",
       "meter a cara"
+    ],
+    "girias": [
+      "sangue no olho",
+      "cara de pau",
+      "peito estufado"
+    ],
+    "trocadilhos": [
+      "Coragem vem do latim 'cor', coração — ou seja, ter coragem é, no fim das contas, agir de coração."
     ],
     "relacionados": [
       "medo",
@@ -673,6 +822,11 @@ const CONCEPTS = [
       "não ter papas na língua",
       "falar sem meias palavras"
     ],
+    "girias": [
+      "sem meio-termo",
+      "na moral",
+      "sem cascata"
+    ],
     "relacionados": [
       "verdade",
       "integridade",
@@ -696,6 +850,11 @@ const CONCEPTS = [
       "defender mesmo quando não é fácil",
       "não virar as costas quando a maré vira",
       "ficar do lado de quem sempre esteve do seu"
+    ],
+    "girias": [
+      "fechado com",
+      "parceria fechada",
+      "na sua, sempre"
     ],
     "relacionados": [
       "confianca",
@@ -725,6 +884,9 @@ const CONCEPTS = [
       "Quem com ferro fere, com ferro será ferido.",
       "Cada macaco no seu galho."
     ],
+    "trocadilhos": [
+      "Dizem que a justiça tarda mas não falha — só esquecem de avisar o quanto ela tarda."
+    ],
     "relacionados": [
       "igualdade",
       "honestidade",
@@ -748,6 +910,11 @@ const CONCEPTS = [
       "decidir por si mesmo",
       "não precisar pedir permissão para viver a própria vida",
       "sair do lugar quando bem entender"
+    ],
+    "girias": [
+      "tá solto(a)",
+      "de rédea solta",
+      "na sua"
     ],
     "relacionados": [
       "responsabilidade",
@@ -799,6 +966,10 @@ const CONCEPTS = [
     "ditados": [
       "Faça aos outros o que gostaria que fizessem a você."
     ],
+    "girias": [
+      "levar na moral",
+      "de respeito"
+    ],
     "relacionados": [
       "humildade",
       "honestidade",
@@ -822,6 +993,10 @@ const CONCEPTS = [
       "aprender mesmo já sabendo muito",
       "admitir quando não sabe",
       "dar valor às coisas simples da vida"
+    ],
+    "girias": [
+      "com os pés no chão",
+      "sem se achar"
     ],
     "relacionados": [
       "respeito",
@@ -847,6 +1022,10 @@ const CONCEPTS = [
       "pensar no bem do outro",
       "abrir mão do próprio conforto por alguém",
       "doar o tempo que também é escasso"
+    ],
+    "girias": [
+      "mão aberta",
+      "sempre dá um help"
     ],
     "relacionados": [
       "solidariedade",
@@ -881,6 +1060,15 @@ const CONCEPTS = [
       "engolir sapos",
       "engolir em seco"
     ],
+    "girias": [
+      "susse",
+      "levando na boa",
+      "sem estresse"
+    ],
+    "trocadilhos": [
+      "Paciência quase rima com 'paz' mais 'ciência' — só falta alguém se formar nessa faculdade.",
+      "Minha paciência é uma virtude em promoção: última unidade, sem troca."
+    ],
     "relacionados": [
       "calma",
       "perseveranca",
@@ -908,6 +1096,10 @@ const CONCEPTS = [
     "ditados": [
       "Água mole em pedra dura, tanto bate até que fura.",
       "De grão em grão, a galinha enche o papo."
+    ],
+    "girias": [
+      "insistente pra caramba",
+      "não dá trégua"
     ],
     "relacionados": [
       "coragem",
@@ -937,6 +1129,11 @@ const CONCEPTS = [
     "ditados": [
       "Mais vale um pássaro na mão do que dois voando.",
       "A experiência é a melhor mestra."
+    ],
+    "girias": [
+      "sabidão(a)",
+      "de cabeça boa",
+      "manja dos assuntos"
     ],
     "relacionados": [
       "conhecimento",
@@ -988,6 +1185,14 @@ const CONCEPTS = [
       "colocar os pingos nos is",
       "acertar as contas"
     ],
+    "girias": [
+      "dar conta do recado",
+      "segurar a onda",
+      "ser responsa"
+    ],
+    "trocadilhos": [
+      "Responsabilidade é a habilidade de responder pelo que se fez — inclusive quando a resposta é só 'foi mal'."
+    ],
     "relacionados": [
       "integridade",
       "liberdade",
@@ -1014,6 +1219,11 @@ const CONCEPTS = [
     ],
     "ditados": [
       "Tudo tem seu tempo."
+    ],
+    "trocadilhos": [
+      "Combinei de sair, mas o tempo não combinou comigo — nem o relógio, nem a previsão.",
+      "Tempo é dinheiro, mas ninguém aceita pagar a conta com previsão do tempo.",
+      "Perguntei as horas pro tempo lá fora. Ele só respondeu: 'nublado'."
     ],
     "relacionados": [
       "mudanca",
@@ -1043,6 +1253,11 @@ const CONCEPTS = [
     "ditados": [
       "Antes tarde do que nunca."
     ],
+    "girias": [
+      "dar uma guinada",
+      "trocar de vida",
+      "resetar"
+    ],
     "relacionados": [
       "tempo",
       "coragem",
@@ -1067,6 +1282,11 @@ const CONCEPTS = [
       "reconstruir do zero depois de um fim",
       "plantar de novo depois da colheita ruim",
       "acordar disposto a tentar de novo"
+    ],
+    "girias": [
+      "resetar a vida",
+      "dar a volta por cima",
+      "começar do zero mesmo"
     ],
     "relacionados": [
       "mudanca",
@@ -1128,6 +1348,14 @@ const CONCEPTS = [
       "pegar carona na oportunidade",
       "aproveitar a deixa"
     ],
+    "girias": [
+      "sortudo(a) demais",
+      "colou a sorte"
+    ],
+    "trocadilhos": [
+      "Jogo na sorte, mas ela nunca retorna minhas ligações.",
+      "Dizem que sorte é para quem se prepara — a minha ainda tá se arrumando no espelho."
+    ],
     "relacionados": [
       "destino",
       "surpresa",
@@ -1150,6 +1378,9 @@ const CONCEPTS = [
       "falar sem rodeios",
       "não maquiar os fatos",
       "dizer o que é, sem enfeitar"
+    ],
+    "trocadilhos": [
+      "A verdade dói, mas pelo menos não cobra hora extra."
     ],
     "relacionados": [
       "honestidade",
@@ -1177,6 +1408,17 @@ const CONCEPTS = [
     "ditados": [
       "A mentira tem perna curta.",
       "Quem conta um conto aumenta um ponto."
+    ],
+    "girias": [
+      "lorota",
+      "cascata",
+      "papo furado",
+      "conversa mole",
+      "estória"
+    ],
+    "trocadilhos": [
+      "Contei uma mentirinha branca — acho que ela pegou um resfriado e ficou cinza.",
+      "A mentira tem perna curta, mas a desculpa sempre arruma um Uber."
     ],
     "relacionados": [
       "verdade",
@@ -1208,6 +1450,11 @@ const CONCEPTS = [
     "expressoes": [
       "estar com a pulga atrás da orelha",
       "colocar minhoca na cabeça"
+    ],
+    "girias": [
+      "cismado(a)",
+      "com um pé atrás",
+      "meio incerto"
     ],
     "relacionados": [
       "decisao",
@@ -1265,6 +1512,11 @@ const CONCEPTS = [
       "juntar teoria e prática na cabeça",
       "nunca parar de se atualizar"
     ],
+    "girias": [
+      "manja",
+      "saca",
+      "curte o assunto"
+    ],
     "relacionados": [
       "sabedoria",
       "ignorancia",
@@ -1290,6 +1542,11 @@ const CONCEPTS = [
     ],
     "expressoes": [
       "fazer vista grossa"
+    ],
+    "girias": [
+      "boiando",
+      "tá boiando",
+      "não saca nada"
     ],
     "relacionados": [
       "conhecimento",
@@ -1317,6 +1574,11 @@ const CONCEPTS = [
     "ditados": [
       "A curiosidade matou o gato."
     ],
+    "girias": [
+      "fuçando",
+      "cutucando",
+      "querendo saber tudo"
+    ],
     "relacionados": [
       "conhecimento",
       "surpresa",
@@ -1339,6 +1601,11 @@ const CONCEPTS = [
       "controlar o rumo das coisas",
       "decidir o destino de quem está ao redor",
       "ter a última palavra em qualquer discussão"
+    ],
+    "girias": [
+      "mandão(a)",
+      "no comando",
+      "manda quem pode"
     ],
     "relacionados": [
       "liberdade",
@@ -1368,6 +1635,11 @@ const CONCEPTS = [
       "ter as rédeas na mão",
       "segurar as pontas"
     ],
+    "girias": [
+      "nas rédeas",
+      "no comando",
+      "tudo sob controle"
+    ],
     "relacionados": [
       "poder",
       "calma",
@@ -1395,6 +1667,18 @@ const CONCEPTS = [
     "ditados": [
       "Farinha pouca, meu pirão primeiro.",
       "Dinheiro não traz felicidade, mas ajuda a procurar."
+    ],
+    "girias": [
+      "grana",
+      "bufunfa",
+      "trocado",
+      "cascalho",
+      "aquele dinheiro",
+      "o benjamim"
+    ],
+    "trocadilhos": [
+      "Dinheiro não cai do céu, só a conta de luz é que sempre encontra o caminho até a caixa de entrada.",
+      "Grana boa é igual parente distante: some bem na hora que você mais precisa dela por perto."
     ],
     "relacionados": [
       "trabalho",
@@ -1425,6 +1709,11 @@ const CONCEPTS = [
       "nadar em dinheiro",
       "estar podre de rico"
     ],
+    "girias": [
+      "cheio da nota",
+      "tá granado",
+      "nadando na grana"
+    ],
     "relacionados": [
       "dinheiro",
       "sorte",
@@ -1453,6 +1742,11 @@ const CONCEPTS = [
       "estar liso",
       "estar sem eira nem beira"
     ],
+    "girias": [
+      "tá quebrado(a)",
+      "sem uma bala",
+      "liso"
+    ],
     "relacionados": [
       "dinheiro",
       "fracasso",
@@ -1475,6 +1769,11 @@ const CONCEPTS = [
       "gastar sem culpa numa ocasião especial",
       "cercar-se de coisas caras e refinadas",
       "dar-se um mimo de vez em quando"
+    ],
+    "girias": [
+      "mó estilo",
+      "vida boa",
+      "geral chique"
     ],
     "relacionados": [
       "abundancia",
@@ -1507,6 +1806,11 @@ const CONCEPTS = [
       "tirar proveito da situação",
       "puxar a brasa para a própria sardinha"
     ],
+    "girias": [
+      "mão de vaca",
+      "só pensa em grana",
+      "ambicioso pra caramba"
+    ],
     "relacionados": [
       "inveja",
       "dinheiro",
@@ -1530,6 +1834,15 @@ const CONCEPTS = [
       "ser reconhecido pelo que fez",
       "ver o trabalho duro finalmente valer a pena",
       "cruzar a linha de chegada depois de tanto esforço"
+    ],
+    "girias": [
+      "bombar",
+      "estourar",
+      "virar hit",
+      "dar certo pra caramba"
+    ],
+    "trocadilhos": [
+      "Sucesso é 1% inspiração, 99% transpiração e 100% gente perguntando quando você começou."
     ],
     "relacionados": [
       "fracasso",
@@ -1560,6 +1873,12 @@ const CONCEPTS = [
       "dar com os burros n'água",
       "jogar a toalha",
       "ficar a ver navios"
+    ],
+    "girias": [
+      "dar rolo",
+      "dar ruim",
+      "vacilar",
+      "levar um perrengue"
     ],
     "relacionados": [
       "sucesso",
@@ -1644,6 +1963,10 @@ const CONCEPTS = [
     ],
     "ditados": [
       "Errar é humano, perdoar é divino."
+    ],
+    "girias": [
+      "deixar pra lá",
+      "relevar"
     ],
     "relacionados": [
       "culpa",
@@ -1779,6 +2102,16 @@ const CONCEPTS = [
       "Diz-me com quem andas que te direi quem és.",
       "É na necessidade que se conhece o amigo verdadeiro."
     ],
+    "girias": [
+      "mano",
+      "parça",
+      "brother",
+      "truta",
+      "colega de fé"
+    ],
+    "trocadilhos": [
+      "Amigo de verdade é aquele que empresta dinheiro sem cobrar nem os juros da amizade."
+    ],
     "relacionados": [
       "amor",
       "lealdade",
@@ -1807,6 +2140,11 @@ const CONCEPTS = [
     "ditados": [
       "Filho de peixe, peixinho é."
     ],
+    "girias": [
+      "minha gente",
+      "meu povo",
+      "a rapaziada"
+    ],
     "relacionados": [
       "amor",
       "amizade",
@@ -1832,6 +2170,14 @@ const CONCEPTS = [
     ],
     "expressoes": [
       "pôr a mão no fogo por alguém"
+    ],
+    "girias": [
+      "fechado com alguém",
+      "parceria de verdade",
+      "de boa contigo"
+    ],
+    "trocadilhos": [
+      "Confiança é a fiança que você dá de graça — nem juiz de plantão cobra isso."
     ],
     "relacionados": [
       "lealdade",
@@ -1861,6 +2207,11 @@ const CONCEPTS = [
       "virar a casaca",
       "dar uma facada pelas costas"
     ],
+    "girias": [
+      "dar o cano",
+      "passar a rasteira",
+      "queimar o filme"
+    ],
     "relacionados": [
       "confianca",
       "mentira",
@@ -1888,6 +2239,11 @@ const CONCEPTS = [
     "expressoes": [
       "levar um fora",
       "levar um pé na porta"
+    ],
+    "girias": [
+      "levar um gelo",
+      "ficar no vácuo",
+      "tomar um fora"
     ],
     "relacionados": [
       "tristeza",
@@ -1959,6 +2315,10 @@ const CONCEPTS = [
       "não encontrar espaço em lugar nenhum",
       "ser o último escolhido sempre"
     ],
+    "girias": [
+      "ficar no vácuo",
+      "ficar de fora"
+    ],
     "relacionados": [
       "rejeicao",
       "solidao",
@@ -2011,6 +2371,9 @@ const CONCEPTS = [
     ],
     "ditados": [
       "Cada macaco no seu galho."
+    ],
+    "trocadilhos": [
+      "Indivíduo é quem não pode ser dividido — tenta explicar isso pra quem insiste em rachar a conta igual."
     ],
     "relacionados": [
       "liberdade",
@@ -2104,6 +2467,11 @@ const CONCEPTS = [
       "guardar aquela pessoa como referência",
       "sentir orgulho alheio como se fosse próprio"
     ],
+    "girias": [
+      "ser fã",
+      "aquele ídolo",
+      "shippar"
+    ],
     "relacionados": [
       "gratidao",
       "inspiracao",
@@ -2151,6 +2519,11 @@ const CONCEPTS = [
       "sentir a vontade de ir além renovada",
       "lembrar por que começou quando bate o cansaço"
     ],
+    "girias": [
+      "tá ligado no 220",
+      "tá afiado(a)",
+      "tá on fire"
+    ],
     "relacionados": [
       "esperanca",
       "perseveranca",
@@ -2179,6 +2552,14 @@ const CONCEPTS = [
       "encher linguiça",
       "empurrar com a barriga"
     ],
+    "girias": [
+      "mole",
+      "molenga",
+      "modorra"
+    ],
+    "trocadilhos": [
+      "Minha preguiça tem carteira assinada: trabalha todo santo dia, sem folga nenhuma."
+    ],
     "relacionados": [
       "tedio",
       "motivacao",
@@ -2202,6 +2583,14 @@ const CONCEPTS = [
       "precisar de uma pausa antes de continuar",
       "arrastar-se até o fim da tarefa",
       "sentir o peso do dia nas costas"
+    ],
+    "girias": [
+      "sem pilha",
+      "zerado(a)",
+      "acabado(a)"
+    ],
+    "trocadilhos": [
+      "Tô tão cansado que até minha sombra bocejou hoje."
     ],
     "relacionados": [
       "estresse",
@@ -2230,6 +2619,15 @@ const CONCEPTS = [
       "estar com a corda no pescoço",
       "estar no limite"
     ],
+    "girias": [
+      "surtando",
+      "tá de cabeça",
+      "no talo",
+      "no limite"
+    ],
+    "trocadilhos": [
+      "Tô tão estressado que até meu café pediu um café."
+    ],
     "relacionados": [
       "ansiedade",
       "cansaco",
@@ -2253,6 +2651,11 @@ const CONCEPTS = [
       "sentir que passou o pior",
       "soltar o ar que nem sabia que estava prendendo",
       "sentir o corpo relaxar de uma vez"
+    ],
+    "girias": [
+      "ufa!",
+      "aliviei geral",
+      "tirei um peso"
     ],
     "relacionados": [
       "calma",
@@ -2281,6 +2684,11 @@ const CONCEPTS = [
       "chutar o balde",
       "levar um balde de água fria"
     ],
+    "girias": [
+      "furou meu barco",
+      "que perrengue",
+      "baixo-astral total"
+    ],
     "relacionados": [
       "raiva",
       "tristeza",
@@ -2307,6 +2715,10 @@ const CONCEPTS = [
     "ditados": [
       "Água mole em pedra dura, tanto bate até que fura.",
       "Depois da tempestade vem a bonança."
+    ],
+    "girias": [
+      "virou o jogo",
+      "deu a volta por cima"
     ],
     "relacionados": [
       "coragem",
@@ -2409,6 +2821,11 @@ const CONCEPTS = [
       "deixar a mente vagar para longe do assunto",
       "não conseguir manter o foco em nada"
     ],
+    "girias": [
+      "viajando",
+      "voando",
+      "com a cabeça longe"
+    ],
     "relacionados": [
       "foco",
       "preguica",
@@ -2486,6 +2903,15 @@ const CONCEPTS = [
       "virar de cabeça para baixo",
       "ser um Deus nos acuda"
     ],
+    "girias": [
+      "rolo",
+      "zona",
+      "deu ruim",
+      "bagunça geral"
+    ],
+    "trocadilhos": [
+      "Minha vida virou um Deus-nos-acuda com Wi-Fi lento."
+    ],
     "relacionados": [
       "organizacao",
       "estresse",
@@ -2515,6 +2941,11 @@ const CONCEPTS = [
     "expressoes": [
       "apagar um incêndio"
     ],
+    "girias": [
+      "é pra ontem",
+      "corre!",
+      "um corre danado"
+    ],
     "relacionados": [
       "tempo",
       "estresse",
@@ -2540,6 +2971,10 @@ const CONCEPTS = [
     ],
     "ditados": [
       "Em time que está ganhando não se mexe."
+    ],
+    "girias": [
+      "mesmice",
+      "correria do dia a dia"
     ],
     "relacionados": [
       "tedio",
@@ -2568,6 +3003,16 @@ const CONCEPTS = [
     "ditados": [
       "Deus ajuda quem cedo madruga.",
       "Devagar se vai ao longe."
+    ],
+    "girias": [
+      "trampo",
+      "batente",
+      "correria",
+      "bico",
+      "labuta"
+    ],
+    "trocadilhos": [
+      "Trabalho vem do latim 'tripalium', um instrumento de tortura — a palavra já nasceu reclamando da segunda-feira."
     ],
     "relacionados": [
       "dinheiro",
@@ -2648,6 +3093,11 @@ const CONCEPTS = [
       "arrepiar com aquele refrão certo na hora certa",
       "sentir a batida tomar conta do corpo"
     ],
+    "girias": [
+      "aquele som",
+      "batidão",
+      "um hit"
+    ],
     "relacionados": [
       "arte",
       "felicidade",
@@ -2719,6 +3169,11 @@ const CONCEPTS = [
       "voltar diferente do que era antes de partir",
       "perder-se de propósito só para descobrir"
     ],
+    "girias": [
+      "bater perna",
+      "cair na estrada",
+      "dar um perdido"
+    ],
     "relacionados": [
       "liberdade",
       "curiosidade",
@@ -2746,6 +3201,11 @@ const CONCEPTS = [
       "Nem tudo que reluz é ouro.",
       "As aparências enganam."
     ],
+    "girias": [
+      "um gato/uma gata",
+      "arrasando",
+      "deusa(o)"
+    ],
     "relacionados": [
       "arte",
       "natureza",
@@ -2772,6 +3232,10 @@ const CONCEPTS = [
     "ditados": [
       "Antes prevenir do que remediar."
     ],
+    "girias": [
+      "tá on",
+      "numa boa de saúde"
+    ],
     "relacionados": [
       "vida",
       "calma",
@@ -2794,6 +3258,11 @@ const CONCEPTS = [
       "correr atrás de tudo sem medo do cansaço",
       "sentir a vida ainda toda por descobrir",
       "acreditar que dá tempo para tudo"
+    ],
+    "girias": [
+      "a gurizada",
+      "a moçada",
+      "novinho(a)"
     ],
     "relacionados": [
       "vida",
@@ -2818,6 +3287,9 @@ const CONCEPTS = [
       "guardar sabedoria em cada ruga",
       "viver no ritmo que o corpo agora pede"
     ],
+    "girias": [
+      "coroa"
+    ],
     "relacionados": [
       "sabedoria",
       "tempo",
@@ -2839,6 +3311,11 @@ const CONCEPTS = [
       "rir por qualquer bobagem",
       "não ter noção do tamanho dos problemas do mundo",
       "guardar aquele gosto de infância em uma lembrança"
+    ],
+    "girias": [
+      "molecagem",
+      "criançada",
+      "pirralhice"
     ],
     "relacionados": [
       "saudade",
@@ -2862,6 +3339,13 @@ const CONCEPTS = [
       "sair da rotina para simplesmente se divertir",
       "curtir a companhia de quem gosta",
       "perder a noção do tempo se divertindo"
+    ],
+    "girias": [
+      "balada",
+      "rolê",
+      "curtição",
+      "farra",
+      "night"
     ],
     "relacionados": [
       "euforia",
@@ -2889,6 +3373,11 @@ const CONCEPTS = [
     "ditados": [
       "Rir é o melhor remédio."
     ],
+    "girias": [
+      "zoeira",
+      "zoação",
+      "brincadeira"
+    ],
     "relacionados": [
       "diversao",
       "alivio",
@@ -2911,6 +3400,9 @@ const CONCEPTS = [
       "dar o seu melhor só para superar o outro",
       "sentir a adrenalina da disputa",
       "jogar para ganhar, não só para participar"
+    ],
+    "trocadilhos": [
+      "Competir vem de 'buscar junto' — só que ninguém avisou que era pra vencer sozinho."
     ],
     "relacionados": [
       "ganancia",
@@ -3014,6 +3506,11 @@ const CONCEPTS = [
     "expressoes": [
       "quebrar um galho",
       "dar uma força"
+    ],
+    "girias": [
+      "dar um help",
+      "topar ajudar",
+      "no time de quem precisa"
     ],
     "relacionados": [
       "generosidade",
